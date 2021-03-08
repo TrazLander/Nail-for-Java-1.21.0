@@ -1,0 +1,1 @@
+execute if score fake! gamestatus matches 0 run 

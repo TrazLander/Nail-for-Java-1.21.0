@@ -43,6 +43,14 @@ team leave @a[team=!,scores={Teams=..0}]
 team leave @a[team=!,scores={Teams=11..}]
 
 
+# someone enters team 1 trough arch
+scoreboard players set @a[x=2,y=212,z=14,dx=1,dy=0,dz=0,gamemode=!spectator] Teams 11
+execute as @p[scores={Teams=11}] run function nail:player/t1_trough_in_tp
+# someone enters team 2 trough arch
+scoreboard players set @a[x=-4,y=212,z=14,dx=1,dy=0,dz=0,gamemode=!spectator] Teams 12
+execute as @p[scores={Teams=12}] run function nail:player/t2_trough_in_tp
+
+
 # gamestatus specific functions
 execute if score fake! gamestatus matches 0 run function nail:ticks/tick_beforegame
 execute if score fake! gamestatus matches 1 run function nail:ticks/tick_duringgame
