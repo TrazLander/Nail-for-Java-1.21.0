@@ -6,8 +6,8 @@ xp set @a[scores={Teams=0}] 0 levels
 xp set @a[scores={Teams=0}] 0 points
 effect give @a[scores={Teams=0}] minecraft:saturation 1000000 255 true
 effect give @a[scores={Teams=0}] minecraft:instant_health 2 10 true
-effect give @a[scores={Teams=0}] minecraft:resistance 100000 5 true
-effect give @a[scores={Teams=0}] minecraft:weakness 100000 5 true
+effect give @a[scores={Teams=0}] minecraft:resistance 1000000 5 true
+effect give @a[scores={Teams=0}] minecraft:weakness 1000000 5 true
 spawnpoint @a[scores={Teams=0}] 157 2 2165 -90
 #execute @p[scores={Teams=0}] ~ ~ ~ function nail:specificplayers
 
