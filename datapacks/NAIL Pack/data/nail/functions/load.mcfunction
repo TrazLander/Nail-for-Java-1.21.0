@@ -1,3 +1,4 @@
-function nail:load/set_gamerules"
-function nail:load/setup_scoreboards"
-function nail:load/setup_teams"
+function nail:setup/set_gamerules
+function nail:setup/setup_scoreboards
+function nail:setup/setup_teams
+function nail:setup/load_beforegame
