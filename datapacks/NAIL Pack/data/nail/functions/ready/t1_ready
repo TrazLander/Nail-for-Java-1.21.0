@@ -1,0 +1,14 @@
+scoreboard players set @p ReadyDisplay 0
+execute as @p[scores={ReadyDisplay=..0}] -3 213 48 detect -3 213 48 minecraft:lever 9 scoreboard players set @a[scores={ReadyDisplay=..0}] ReadyDisplay 1
+scoreboard players set @p[scores={ReadyDisplay=0..}] ReadyDisplay2 0
+execute as @a[scores={Teams=1}] run scoreboard players add fake! Math 1
+execute as @a[scores={ReadyDisplay=1}] ~ ~ ~ scoreboard players reset §1Defenders§f-§cUnready GameStart
+execute as @a[scores={ReadyDisplay=1}] ~ ~ ~ scoreboard players operation §1Defenders§f-§2Ready GameStart = fake! Math
+scoreboard players reset * Math
+
+
+
+
+execute if score t2lever levers matches 1 run scoreboard objectives add T1StartTimer dummy
+execute if score t2lever levers matches 1 run scoreboard players set Tick! T1StartTimer 0
+execute if score t2lever levers matches 1 run scoreboard players set Second1! T1StartTimer 6
