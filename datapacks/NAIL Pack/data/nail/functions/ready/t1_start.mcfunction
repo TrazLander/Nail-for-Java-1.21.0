@@ -43,3 +43,5 @@ clone 183 36 2172 183 36 2172 185 36 2172
 clone 183 36 2174 183 36 2174 185 36 2174
 fill 185 36 2173 185 36 2173 minecraft:redstone_block
 fill 185 36 2173 185 36 2173 minecraft:stone
+scoreboard objectives add cobwebtimer dummy
+scoreboard players set fake! cobwebtimer 1
