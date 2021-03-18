@@ -52,9 +52,9 @@ execute as @p[scores={Teams=12}] run function nail:player/t2_trough_in_tp
 
 
 # gamestatus specific functions
-execute if score fake! gamestatus matches 0 run function nail:ticks/tick_beforegame
-execute if score fake! gamestatus matches 1 run function nail:ticks/tick_duringgame
-execute if score fake! gamestatus matches 2 run function nail:ticks/tick_aftergame
+execute if score fake! gamestatus matches 1 run function nail:ticks/tick_beforegame
+execute if score fake! gamestatus matches 2 run function nail:ticks/tick_duringgame
+execute if score fake! gamestatus matches 3 run function nail:ticks/tick_aftergame
 
 
 # BACKDOOR - TOTALLY FORGET TO REMOVE THIS LATER

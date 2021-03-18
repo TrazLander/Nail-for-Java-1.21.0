@@ -1,3 +1,5 @@
+scoreboard objectives remove T1StartTimer
+
 # tp out fix
 tp @a[x=3,y=213,z=48,dx=0,dy=0,dz=0,gamemode=!spectator] 2 213 48 ~ ~
 
@@ -16,8 +18,10 @@ xp set @a[scores={Teams=1}] 0 points
 effect give @a[scores={Teams=1}] minecraft:instant_health 2 10 true
 effect give @a[scores={Teams=1}] minecraft:resistance 2 5 true
 effect give @a[scores={Teams=1}] minecraft:saturation 1 255 true
-spawnpoint @a[scores={Teams=1}] 0 218 429
 gamemode survival @a[scores={Teams=1}]
+
+# spawnpoint
+spawnpoint @a[scores={Teams=1}] 0 218 429
 
 # piston sound at floor
 playsound block.piston.contract master @a 0.0 211 48 .9 .7
@@ -45,3 +49,15 @@ fill 185 36 2173 185 36 2173 minecraft:redstone_block
 fill 185 36 2173 185 36 2173 minecraft:stone
 scoreboard objectives add cobwebtimer dummy
 scoreboard players set fake! cobwebtimer 1
+
+# start the t2 6-second countdown
+scoreboard objectives add T2StartTimer dummy
+scoreboard players set Tick! T2StartTimer 1
+execute if score fake! DefenderHandicap matches 0 run scoreboard players set Second1! T2StartTimer 60
+execute if score fake! DefenderHandicap matches 0 run scoreboard players set Second1! T2StartTimer 90
+
+# queue system stuff
+execute as @a[scores={Teams=1}] run scoreboard players operation @s QueueSet = @s Queue
+
+# load duringgame
+function nail:setup/load_duringgame

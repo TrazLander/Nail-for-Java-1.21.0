@@ -1,4 +1,11 @@
-#Sets Teams scoreboard
+# set gamestatus to 1
+scoreboard objectives remove gamestatus
+scoreboard objectives add gamestatus dummy
+scoreboard players set fake! gamestatus 1
+
+function nail:setup/set_gamerules
+
+# sets Teams scoreboard
 scoreboard objectives add Teams dummy
 scoreboard players set @a[scores={Teams=..2}] Teams 0
 scoreboard players set @a[scores={Teams=20}] Teams 21
@@ -6,8 +13,16 @@ scoreboard players set @a[scores={SwapSidesTemp=11}] Teams 11
 scoreboard players set @a[scores={SwapSidesTemp=12}] Teams 12
 scoreboard objectives remove SwapSidesTemp
 
-scoreboard objectives remove Enderman
+# setup java version teams
+function nail:setup/setup_teams
 
+# clear various scoreboards that might be up during a mid-game reset
+scoreboard objectives remove Enderman
+scoreboard objectives remove T1StartTimer
+scoreboard objectives remove T2StartTimer
+scoreboard objectives remove TroughKill
+
+# add beforegame scoreboards
 scoreboard objectives remove Math
 scoreboard objectives add Math dummy
 
