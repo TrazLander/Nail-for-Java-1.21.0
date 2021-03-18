@@ -13,3 +13,5 @@ execute if score fake! MapMode matches 2..3 run execute as @p[x=-1,y=208,z=30,dx
 function nail:game/t2_victory_check
 function nail:game/t1_victory_check
 function nail:game/timer_board
+
+execute if score fake! cobwebtimer matches 1 run function nail:ready/cobwebtimer
