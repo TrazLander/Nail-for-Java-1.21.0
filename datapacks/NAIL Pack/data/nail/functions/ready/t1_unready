@@ -1,2 +1,0 @@
-scoreboard players reset §1Defenders§f-§2Ready GameStart
-scoreboard players operation §1Defenders§f-§cUnready GameStart = @p[scores={ReadyDisplay2=0..}] ReadyDisplay2

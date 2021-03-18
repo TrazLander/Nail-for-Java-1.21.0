@@ -12,8 +12,9 @@ scoreboard players reset * Math
 
 
 execute if score t1lever levers matches 0 run execute if block -3 213 48 minecraft:lever[powered=true] run function nail:ready/t1_ready
-execute if score t1lever levers matches 1 run execute if block -3 213 48 minecraft:lever[powered=false] run function nail:ready/t1_unready
+execute if score t1lever levers matches 1 run execute unless block -3 213 48 minecraft:lever[powered=true] run function nail:ready/t1_unready
 
 execute if score t2lever levers matches 0 run execute if block -3 213 46 minecraft:lever[powered=true] run function nail:ready/t2_ready
-execute if score t2lever levers matches 1 run execute if block -3 213 46 minecraft:lever[powered=false] run function nail:ready/t2_unready
+execute if score t2lever levers matches 1 run execute unless block -3 213 46 minecraft:lever[powered=true] run function nail:ready/t2_unready
 
+execute if score Tick! T1StartTimer matches -1.. run function nail:ready/t1_countdown
