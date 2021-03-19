@@ -1,8 +1,9 @@
-tellraw @a ["",{"text":"Victory to the Invaders!","color":"dark_red"}]
+tellraw @a ["",{"text":"Victory to the Defenders!","color":"dark_aqua"}]
 
 # tnt board
 scoreboard objectives add TNTboard dummy
-scoreboard players set fake! TNTboard 1
+scoreboard players set team! TNTboard 1
+scoreboard players set fake! TNTboard -1
 
-# load duringgame
-function nail:setup/load_duringgame
+# load aftergame
+function nail:setup/load_aftergame
