@@ -30,7 +30,7 @@ playsound block.piston.contract master @a 0.0 211 48 .9 .7
 fill -3 211 48 2 211 48 air
 
 # set gamestatus to duringgame
-scoreboard players set fake! gamestatus 1
+scoreboard players set fake! gamestatus 2
 
 # TODO: turn off server mode countdown clock?
 

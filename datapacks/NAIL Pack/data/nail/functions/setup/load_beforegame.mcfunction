@@ -5,6 +5,12 @@ scoreboard players set fake! gamestatus 1
 
 function nail:setup/set_gamerules
 
+# set MapMode
+# 1 = tournament, 2 = friendlies, 3 = server
+scoreboard objectives remove MapMode
+scoreboard objectives add MapMode dummy
+scoreboard players set fake! MapMode 2
+
 # sets Teams scoreboard
 scoreboard objectives add Teams dummy
 scoreboard players set @a[scores={Teams=..2}] Teams 0
@@ -21,6 +27,9 @@ scoreboard objectives remove Enderman
 scoreboard objectives remove T1StartTimer
 scoreboard objectives remove T2StartTimer
 scoreboard objectives remove TroughKill
+scoreboard objectives remove T1RespawnRotate
+scoreboard objectives remove TNTboard
+forceload remove 0 226 -1 226
 
 # add beforegame scoreboards
 scoreboard objectives remove Math

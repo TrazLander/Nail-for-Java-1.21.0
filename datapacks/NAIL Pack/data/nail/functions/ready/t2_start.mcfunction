@@ -28,3 +28,8 @@ fill -3 211 46 2 211 46 air
 # wither sound to all on invader release
 execute as @a run playsound entity.wither.spawn master @p ~ ~ ~ 2 .9
 
+# update trough kill
+scoreboard players set fake! TroughKill 2
+
+# queue system stuff
+execute as @a[scores={Teams=2}] run scoreboard players operation @s QueueSet = @s Queue
