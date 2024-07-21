@@ -5,5 +5,5 @@ scoreboard objectives add TNTboard dummy
 scoreboard players set team! TNTboard 2
 scoreboard players set fake! TNTboard -1
 
-# load aftergame
-function nail:setup/load_aftergame
+# load endofgame
+function nail:setup/load_endofgame

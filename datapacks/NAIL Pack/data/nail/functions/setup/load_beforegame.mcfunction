@@ -46,3 +46,9 @@ scoreboard objectives remove ReadyDisplay
 scoreboard objectives remove ReadyDisplay2
 execute if score fake! MapMode matches 1..2 run scoreboard objectives add ReadyDisplay dummy
 execute if score fake! MapMode matches 1..2 run scoreboard objectives add ReadyDisplay2 dummy
+
+# lane protection setup
+scoreboard objectives remove LaneProtection
+
+# specific player check scoreboard
+scoreboard objectives add SpecificPlayer dummy

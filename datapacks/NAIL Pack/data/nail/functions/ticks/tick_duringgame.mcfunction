@@ -21,7 +21,37 @@ execute if score fake! TroughKill matches 1..2 run scoreboard players add @a[x=-
 execute if score fake! TroughKill matches 1..2 run kill @a[scores={Teams=0},gamemode=!spectator,dz=0,dx=6,dy=2,y=212,x=-3,z=46]
 
 # lane protection
-execute if score Tick! T2StartTimer matches 0.. run 
+# execute if score Tick! T2StartTimer matches 0.. run 
+
+# scoreboard players set @a[gamemode=spectator,scores={Teams=1}] LaneProtection 0
+# scoreboard players set @a[gamemode=adventure,scores={Teams=1}] LaneProtection 0
+# scoreboard players set @a[scores={Teams=1},gamemode=spectator,dz=211,dx=39,dy=59,y=199,x=-20,z=31] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1},gamemode=adventure,dz=211,dx=39,dy=59,y=199,x=-20,z=31] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1},gamemode=spectator,dz=195,dx=39,dy=9,y=214,x=-20,z=241] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1},gamemode=adventure,dz=195,dx=39,dy=9,y=214,x=-20,z=241] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1},gamemode=spectator,dz=20,dx=12,dy=9,y=189,x=-17,z=110] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1},gamemode=adventure,dz=20,dx=12,dy=9,y=189,x=-17,z=110] LaneProtection 1
+# effect give @a[scores={LaneProtection=0}] instant_damage 1000000 0 true
+# effect give @a[scores={LaneProtection=1}] instant_damage 0
+# gamemode adventure @a[scores={LaneProtection=0}]
+# gamemode survival @a[scores={LaneProtection=1}]
+# scoreboard players reset * LaneProtection
+
+
+# scoreboard players set @a[gamemode=spectator,scores={Teams=1..2}] LaneProtection 0
+# scoreboard players set @a[gamemode=adventure,scores={Teams=1..2}] LaneProtection 0
+# scoreboard players set @a[scores={Teams=1..2},gamemode=spectator,dz=211,dx=39,dy=59,y=199,x=-20,z=31] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1..2},gamemode=adventure,dz=211,dx=39,dy=59,y=199,x=-20,z=31] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1..2},gamemode=spectator,dz=195,dx=39,dy=9,y=214,x=-20,z=241] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1..2},gamemode=adventure,dz=195,dx=39,dy=9,y=214,x=-20,z=241] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1..2},gamemode=spectator,dz=20,dx=12,dy=9,y=189,x=-17,z=110] LaneProtection 1
+# scoreboard players set @a[scores={Teams=1..2},gamemode=adventure,dz=20,dx=12,dy=9,y=189,x=-17,z=110] LaneProtection 1
+# effect give @a[scores={LaneProtection=0}] instant_damage 1000000 0 true
+# effect give @a[scores={LaneProtection=1}] instant_damage 0
+# gamemode adventure @a[scores={LaneProtection=0}]
+# gamemode survival @a[scores={LaneProtection=1}]
+# scoreboard players reset * LaneProtection
+
 
 # speed to t1 on respawn
 effect give @a[scores={Teams=1},dz=19,dx=7,dy=6,y=216,x=-4,z=414] saturation 1 50 true

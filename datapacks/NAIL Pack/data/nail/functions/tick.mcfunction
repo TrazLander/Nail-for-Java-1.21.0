@@ -1,3 +1,31 @@
+
+execute @p 161 4 2163 detect 161 4 2163 minecraft:stone_button 10 scoreboard objectives add MapMode dummy
+execute @p 161 4 2163 detect 161 4 2163 minecraft:stone_button 10 scoreboard players set fake! MapMode 1
+execute @p 161 4 2163 detect 161 4 2163 minecraft:stone_button 10 fill 183 60 2163 183 60 2163 redstone_block 0 replace stone 0
+execute @p 161 4 2163 detect 161 4 2163 minecraft:stone_button 10 fill 177 1 2165 177 1 2165 stone
+execute @p 161 4 2163 detect 161 4 2163 minecraft:stone_button 10 fill 165 2 2196 165 3 2196 redstone_block
+execute @p 161 4 2163 detect 161 4 2163 minecraft:stone_button 10 fill 161 2 2161 162 6 2169 air
+execute @p 161 4 2165 detect 161 4 2165 minecraft:stone_button 10 scoreboard objectives add MapMode dummy
+execute @p 161 4 2165 detect 161 4 2165 minecraft:stone_button 10 scoreboard players set fake! MapMode 2
+execute @p 161 4 2165 detect 161 4 2165 minecraft:stone_button 10 fill 177 1 2161 177 164 2175 redstone_block 0 replace wool 1
+execute @p 161 4 2165 detect 161 4 2165 minecraft:stone_button 10 fill 177 1 2165 177 1 2165 stone
+execute @p 161 4 2165 detect 161 4 2165 minecraft:stone_button 10 fill 165 2 2197 165 3 2197 redstone_block
+execute @p 161 4 2165 detect 161 4 2165 minecraft:stone_button 10 fill 161 2 2161 162 6 2169 air
+execute @p 161 4 2167 detect 161 4 2167 minecraft:stone_button 10 scoreboard objectives add MapMode dummy
+execute @p 161 4 2167 detect 161 4 2167 minecraft:stone_button 10 scoreboard players set fake! MapMode 3
+execute @p 161 4 2167 detect 161 4 2167 minecraft:stone_button 10 fill 183 60 2163 183 60 2163 redstone_block 0 replace stone 0
+execute @p 161 4 2167 detect 161 4 2167 minecraft:stone_button 10 fill 177 1 2165 177 1 2165 stone
+execute @p 161 4 2167 detect 161 4 2167 minecraft:stone_button 10 fill 165 2 2198 165 3 2198 redstone_block
+execute @p 161 4 2167 detect 161 4 2167 minecraft:stone_button 10 fill 161 2 2161 162 6 2169 air
+scoreboard players operation @p MapMode = fake! MapMode
+execute @p[scores={MapMode=1..3}] ~ ~ ~ scoreboard objectives add DefenderHandicap dummy
+execute @p[scores={MapMode=1..2}] ~ ~ ~ scoreboard players set fake! DefenderHandicap 0
+execute @p[scores={MapMode=3}] ~ ~ ~ scoreboard players set fake! DefenderHandicap 1
+execute @p[scores={MapMode=1..2}] ~ ~ ~ fill 168 5 2201 168 5 2201 redstone_block 0
+execute @p[scores={MapMode=3}] ~ ~ ~ fill 168 1 2201 168 1 2201 redstone_block 0
+scoreboard players reset @a MapMode
+
+
 # SEND TO LOBBY
 scoreboard players add @a Teams 0
 # leave game arch
@@ -54,10 +82,13 @@ execute as @p[scores={Teams=12}] run function nail:player/t2_trough_in_tp
 # gamestatus specific functions
 execute if score fake! gamestatus matches 1 run function nail:ticks/tick_beforegame
 execute if score fake! gamestatus matches 2 run function nail:ticks/tick_duringgame
-execute if score fake! gamestatus matches 3 run function nail:ticks/tick_aftergame
+execute if score fake! gamestatus matches 3 run function nail:ticks/tick_endofgame
 
 
 # BACKDOOR - TOTALLY FORGET TO REMOVE THIS LATER
-gamemode spectator @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name=TrazLander]
-gamemode creative @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name=TrazLander]
-tp @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name=TrazLander] 200 10 2200 90 0
+gamemode spectator @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"]
+gamemode creative @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"]
+tp @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"] 200 10 2200 90 0
+
+
+# specific player check

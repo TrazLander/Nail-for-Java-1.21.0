@@ -12,5 +12,9 @@ scoreboard players set fake! TroughKill 1
 # load the sponges for win detection
 forceload add 0 226 -1 226
 
+# lane protection setup
+scoreboard objectives remove LaneProtection
+scoreboard objectives add LaneProtection dummy
+
 # respawn rotate - no longer needed as of 1.16.2 since they added a rotation to /spawnpoint, but will be needed if map converts to bedrock
 #scoreboard objectives add T1RespawnRotate dummy
