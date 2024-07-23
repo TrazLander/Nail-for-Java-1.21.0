@@ -1,3 +1,11 @@
+# clear player handicap
+scoreboard players set @p DefenderHandicap 0
+scoreboard players operation @p[scores={DefenderHandicap=0}] DefenderHandicap = fake! DefenderHandicap
+execute as @p[scores={DefenderHandicap=0}] time set 12000d
+execute as @p[scores={DefenderHandicap=1}] time set 10800d
+scoreboard players reset @a DefenderHandicap
+difficulty hard
+
 # send flying trough people back into trough
 scoreboard players set @a[x=-3,y=212,z=46,dx=6,dy=2,dz=0,gamemode=spectator,scores={Teams=1}] Teams 11
 scoreboard players set @a[x=-3,y=212,z=48,dx=6,dy=2,dz=0,gamemode=spectator,scores={Teams=2}] Teams 12
