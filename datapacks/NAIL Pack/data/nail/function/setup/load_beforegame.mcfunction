@@ -27,8 +27,9 @@ scoreboard objectives remove Enderman
 scoreboard objectives remove T1StartTimer
 scoreboard objectives remove T2StartTimer
 scoreboard objectives remove TroughKill
-scoreboard objectives remove T1RespawnRotate
+# scoreboard objectives remove T1RespawnRotate
 scoreboard objectives remove TNTboard
+scoreboard objectives remove Kills
 forceload remove 0 226 -1 226
 
 # add beforegame scoreboards
@@ -52,3 +53,13 @@ scoreboard objectives remove LaneProtection
 
 # specific player check scoreboard
 scoreboard objectives add SpecificPlayer dummy
+
+# time set
+scoreboard players set @p DefenderHandicap 0
+scoreboard players operation @p[scores={DefenderHandicap=0}] DefenderHandicap = fake! DefenderHandicap
+execute @p[scores={DefenderHandicap=0}] ~ ~ ~ time set 12000
+execute @p[scores={DefenderHandicap=1}] ~ ~ ~ time set 10800
+scoreboard players reset @a DefenderHandicap
+
+# difficulty
+difficulty hard
