@@ -63,3 +63,9 @@ scoreboard players reset @a DefenderHandicap
 
 # difficulty
 difficulty hard
+
+# Initial Min and Max Players
+# I'm too lazy to actually integrate this, but this works
+# scoreboard objectives add MinMax dummy
+# scoreboard players set Min! MinMax 8
+# scoreboard players set Max! MinMax 12
