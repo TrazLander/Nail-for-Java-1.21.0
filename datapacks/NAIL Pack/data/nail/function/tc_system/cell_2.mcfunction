@@ -1,3 +1,4 @@
+# cell 2
 scoreboard objectives add temp dummy
 execute @p ~ ~ ~ detect 269 25 2239 minecraft:stone_button 11 scoreboard players set @p temp 1
 execute @p[scores={temp=1}] ~ ~ ~ fill 269 26 2235 269 26 2235 stone 0 replace redstone_block 0
