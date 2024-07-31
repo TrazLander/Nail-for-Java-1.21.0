@@ -65,5 +65,7 @@ gamemode spectator @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"]
 gamemode creative @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"]
 tp @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"] 200 10 2200 90 0
 
+# cannon range
+execute if entity @p[x=31,y=212,z=-12,dx=0,dy=0,dz=0] run function nail:cannon_range/cannon_1_clock
 
 # specific player check
