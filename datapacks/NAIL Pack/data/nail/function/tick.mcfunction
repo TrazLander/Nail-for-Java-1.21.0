@@ -65,7 +65,18 @@ gamemode spectator @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"]
 gamemode creative @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"]
 tp @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"] 200 10 2200 90 0
 
+
 # cannon range
+# cannon 1
 execute if entity @p[x=31,y=212,z=-12,dx=0,dy=0,dz=0] run function nail:cannon_range/cannon_1_clock
+execute if score fake! Cannon1 matches 1.. run execute unless entity @p[x=31,y=212,z=-12,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon1
+
+# cannon 2
+execute if entity @p[x=42,y=212,z=3,dx=0,dy=0,dz=2] run function nail:cannon_range/cannon_2_clock
+execute if score fake! Cannon2 matches 1.. run execute unless entity @p[x=42,y=212,z=3,dx=0,dy=0,dz=0] run execute unless entity @p[x=42,y=212,z=5,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon2
+
+# cannon 3
+execute if entity @p[x=42,y=212,z=12,dx=0,dy=0,dz=2] run function nail:cannon_range/cannon_3_clock
+execute if score fake! Cannon3 matches 1.. run execute unless entity @p[x=42,y=212,z=12,dx=0,dy=0,dz=0] run execute unless entity @p[x=42,y=212,z=14,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon3
 
 # specific player check
