@@ -59,5 +59,5 @@ execute if score fake! DefenderHandicap matches 0 run scoreboard players set Sec
 # queue system stuff
 execute as @a[scores={Teams=1}] run scoreboard players operation @s QueueSet = @s Queue
 
-# load duringgame
-function nail:setup/load_duringgame
+# load game start
+function nail:setup/load2_game_start

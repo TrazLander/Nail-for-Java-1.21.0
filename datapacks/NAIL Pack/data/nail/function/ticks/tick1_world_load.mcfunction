@@ -1,3 +1,10 @@
+# Playing Display - shows how many players are playing before the game starts
+scoreboard objectives add temp dummy
+scoreboard players set fake! temp 0
+execute as @a[scores={Teams=1..}] run scoreboard players add fake! temp 1
+scoreboard players operation §6Players: GameStart = fake! temp
+scoreboard objectives remove temp
+
 # clear player handicap
 scoreboard players set @p DefenderHandicap 0
 scoreboard players operation @p[scores={DefenderHandicap=0}] DefenderHandicap = fake! DefenderHandicap
@@ -26,3 +33,6 @@ execute if score fake! MapMode matches 1..2 run execute if score t2lever levers 
 execute if score fake! MapMode matches 1..2 run execute if score t2lever levers matches 1 run execute unless block -3 213 46 minecraft:lever[powered=true] run function nail:ready/t2_unready
 
 execute if score Tick! T1StartTimer matches -1.. run function nail:ready/t1_countdown
+
+# MapMode 3 Automatic Mode - Minimum Players display
+execute if score fake! MapMode matches 3 run function nail:displays/minimum_players

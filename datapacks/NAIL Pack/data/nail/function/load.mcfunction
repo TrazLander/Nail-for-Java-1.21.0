@@ -1,1 +1,0 @@
-function nail:setup/load_beforegame

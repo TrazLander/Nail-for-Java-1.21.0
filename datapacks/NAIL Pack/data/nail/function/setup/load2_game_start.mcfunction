@@ -1,3 +1,9 @@
+# Automatic Mode - remove Minimum Players scoreboard
+scoreboard objectives remove MinimumPlayers
+
+# remove Playing display
+scoreboard objectives remove GameStart
+
 # set gamestatus to 2
 scoreboard players set fake! gamestatus 2
 
@@ -20,16 +26,13 @@ scoreboard objectives add LaneProtection dummy
 #scoreboard objectives add T1RespawnRotate dummy
 
 # time set
-scoreboard players set @p DefenderHandicap 0
-scoreboard players operation @p[scores={DefenderHandicap=0}] DefenderHandicap = fake! DefenderHandicap
-execute @p[scores={DefenderHandicap=0}] ~ ~ ~ time set 12000
-execute @p[scores={DefenderHandicap=1}] ~ ~ ~ time set 10800
-scoreboard players reset @a DefenderHandicap
+execute if score fake! DefenderHandicap matches 0 run time set 12000
+execute if score fake! DefenderHandicap matches 1 run time set 10800
 
 # difficulty
 difficulty peaceful
-fill ~ ~1 ~ ~ ~1 ~ redstone_block 0 replace stone 0
-fill ~ ~-1 ~ ~ ~-1 ~ stone 0 replace redstone_block 0
+fill ~ ~1 ~ ~ ~1 ~ redstone_block replace stone
+fill ~ ~-1 ~ ~ ~-1 ~ stone replace redstone_block
 difficulty hard
 
 # start tracking kills

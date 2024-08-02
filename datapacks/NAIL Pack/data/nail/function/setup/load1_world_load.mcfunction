@@ -6,10 +6,15 @@ scoreboard players set fake! gamestatus 1
 function nail:setup/set_gamerules
 
 # set MapMode
-# 1 = tournament, 2 = friendlies, 3 = server
+# 1 = tournament, 2 = friendlies, 3 = automatic
 scoreboard objectives remove MapMode
 scoreboard objectives add MapMode dummy
 scoreboard players set fake! MapMode 2
+
+# Playing display
+scoreboard objectives remove GameStart
+scoreboard objectives add GameStart dummy
+scoreboard objectives setdisplay sidebar GameStart
 
 # sets Teams scoreboard
 scoreboard objectives add Teams dummy
@@ -36,11 +41,6 @@ forceload remove 0 226 -1 226
 scoreboard objectives remove Math
 scoreboard objectives add Math dummy
 
-scoreboard objectives remove GameStart
-scoreboard objectives add GameStart dummy
-scoreboard objectives setdisplay sidebar GameStart
-
-
 scoreboard objectives remove levers
 execute if score fake! MapMode matches 1..2 run scoreboard objectives add levers dummy
 scoreboard objectives remove ReadyDisplay
@@ -55,11 +55,8 @@ scoreboard objectives remove LaneProtection
 scoreboard objectives add SpecificPlayer dummy
 
 # time set
-scoreboard players set @p DefenderHandicap 0
-scoreboard players operation @p[scores={DefenderHandicap=0}] DefenderHandicap = fake! DefenderHandicap
-execute @p[scores={DefenderHandicap=0}] ~ ~ ~ time set 12000
-execute @p[scores={DefenderHandicap=1}] ~ ~ ~ time set 10800
-scoreboard players reset @a DefenderHandicap
+execute if score fake! DefenderHandicap matches 0 run time set 12000
+execute if score fake! DefenderHandicap matches 1 run time set 10800
 
 # difficulty
 difficulty hard

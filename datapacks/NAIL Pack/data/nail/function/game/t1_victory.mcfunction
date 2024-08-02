@@ -6,4 +6,4 @@ scoreboard players set team! TNTboard 1
 scoreboard players set fake! TNTboard -1
 
 # load endofgame
-function nail:setup/load_endofgame
+function nail:setup/load3_game_end

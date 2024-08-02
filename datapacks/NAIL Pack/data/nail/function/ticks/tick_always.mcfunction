@@ -1,4 +1,7 @@
-
+# gamestatus specific functions
+execute if score fake! gamestatus matches 1 run function nail:ticks/tick1_world_load
+execute if score fake! gamestatus matches 2 run function nail:ticks/tick2_game_start
+execute if score fake! gamestatus matches 3 run function nail:ticks/tick3_game_end
 
 
 # SEND TO LOBBY
@@ -54,10 +57,6 @@ scoreboard players set @a[x=-4,y=212,z=14,dx=1,dy=0,dz=0,gamemode=!spectator] Te
 execute as @p[scores={Teams=12}] run function nail:player/t2_trough_in_tp
 
 
-# gamestatus specific functions
-execute if score fake! gamestatus matches 1 run function nail:ticks/tick_beforegame
-execute if score fake! gamestatus matches 2 run function nail:ticks/tick_duringgame
-execute if score fake! gamestatus matches 3 run function nail:ticks/tick_endofgame
 
 
 # BACKDOOR - TOTALLY FORGET TO REMOVE THIS LATER
