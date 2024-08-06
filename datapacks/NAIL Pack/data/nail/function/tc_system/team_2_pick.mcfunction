@@ -2,7 +2,7 @@
 # Team Captain 2 = Invaders
 
 # announce team captain's choice
-execute @p ~ ~ ~ tellraw @a [{"selector":"@a[scores={TCrandom=2}]","color":"white"},{"text":" has chosen: ","color":"white"},{"text":"Invaders!","color":"red"}]
+execute as @p run tellraw @a [{"selector":"@a[scores={TCrandom=2}]","color":"white"},{"text":" has chosen: ","color":"white"},{"text":"Invaders!","color":"red"}]
 
 # set team captains to their teams
 scoreboard players set @a[scores={TCrandom=1}] TCrandom 21
@@ -21,4 +21,4 @@ scoreboard players set @a[scores={TCrandom=21}] Teams 11
 scoreboard players set @a[x=263,y=32,z=2249,dx=10,dy=2,dz=1] Teams -11
 
 # reset team captain system
-fill 177 157 2161 177 157 2161 redstone_block 0 replace stone 0
+fill 177 157 2161 177 157 2161 redstone_block replace stone
