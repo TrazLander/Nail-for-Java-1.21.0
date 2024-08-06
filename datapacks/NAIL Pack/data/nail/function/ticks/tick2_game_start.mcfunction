@@ -52,17 +52,22 @@ gamemode adventure @a[scores={LaneProtection=0}]
 gamemode survival @a[scores={LaneProtection=1}]
 scoreboard players reset * LaneProtection
 
+# clear beds
+clear @a[scores={Teams=1..2}] minecraft:red_bed
+
 
 # speed to t1 on respawn
 effect give @a[scores={Teams=1},dz=19,dx=7,dy=6,y=216,x=-4,z=414] saturation 1 50 true
 effect give @a[scores={Teams=1},dz=19,dx=7,dy=6,y=216,x=-4,z=414] speed 25 1 true
 
-function nail:game/timer_board
-
 # t2 victory check
 execute unless block 0 225 226 minecraft:sponge run execute unless block -1 225 226 minecraft:sponge run function nail:game/t2_victory
 # t1 victory check
 execute if score fake! TimerMins2 matches ..0 run execute if score fake! TimerMins1 matches ..0 run execute if score fake! TimerSecs2 matches ..0 run execute if score fake! TimerSecs1 matches ..0 run execute if score fake! TimerTicks matches ..0 run function nail:game/t1_victory
+
+
+# game clock
+function nail:game_clock/game_clock
 
 
 # respawn rotate - no longer needed as of 1.16.2 since they added a rotation to /spawnpoint, but will be needed if map converts to bedrock

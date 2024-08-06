@@ -5,12 +5,9 @@ execute as @a[scores={Teams=1..}] run scoreboard players add fake! temp 1
 scoreboard players operation §6Players: GameStart = fake! temp
 scoreboard objectives remove temp
 
-# clear player handicap
-scoreboard players set @p DefenderHandicap 0
-scoreboard players operation @p[scores={DefenderHandicap=0}] DefenderHandicap = fake! DefenderHandicap
-execute as @p[scores={DefenderHandicap=0}] time set 12000d
-execute as @p[scores={DefenderHandicap=1}] time set 10800d
-scoreboard players reset @a DefenderHandicap
+# time and difficulty set
+execute if score fake! DefenderHandicap matches 0 run time set 12000d
+execute if score fake! DefenderHandicap matches 1 run time set 10800d
 difficulty hard
 
 # send flying trough people back into trough

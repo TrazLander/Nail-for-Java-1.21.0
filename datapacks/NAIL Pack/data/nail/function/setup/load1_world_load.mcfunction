@@ -6,10 +6,10 @@ scoreboard players set fake! gamestatus 1
 function nail:setup/set_gamerules
 
 # set MapMode
-# 1 = tournament, 2 = friendlies, 3 = automatic
+# 1 = friendlies, 2 = tournament, 3 = automatic
 scoreboard objectives remove MapMode
 scoreboard objectives add MapMode dummy
-scoreboard players set fake! MapMode 2
+scoreboard players set fake! MapMode 1
 
 # Playing display
 scoreboard objectives remove GameStart
@@ -32,6 +32,7 @@ scoreboard objectives remove Enderman
 scoreboard objectives remove T1StartTimer
 scoreboard objectives remove T2StartTimer
 scoreboard objectives remove TroughKill
+
 # scoreboard objectives remove T1RespawnRotate
 scoreboard objectives remove TNTboard
 scoreboard objectives remove Kills
@@ -54,12 +55,19 @@ scoreboard objectives remove LaneProtection
 # specific player check scoreboard
 scoreboard objectives add SpecificPlayer dummy
 
+# defender handicap setup
+scoreboard objectives add DefenderHandicap dummy
+
 # time set
 execute if score fake! DefenderHandicap matches 0 run time set 12000
 execute if score fake! DefenderHandicap matches 1 run time set 10800
 
 # difficulty
 difficulty hard
+
+# add queue set
+scoreboard objectives remove QueueSet
+execute if score fake! MapMode matches 3 run scoreboard objectives add QueueSet dummy
 
 # Initial Min and Max Players
 # I'm too lazy to actually integrate this, but this works

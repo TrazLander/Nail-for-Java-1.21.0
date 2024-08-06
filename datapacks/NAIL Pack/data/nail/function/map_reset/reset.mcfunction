@@ -1,7 +1,7 @@
 # run - after game
 scoreboard objectives remove RESEThidden
 scoreboard objectives add RESEThidden dummy
-fill 183 60 2161 183 60 2161 redstone_block 0 replace stone 0
+fill 183 60 2161 183 60 2161 redstone_block replace stone
 scoreboard objectives remove RESET
 scoreboard objectives add RESET dummy
 scoreboard objectives setdisplay sidebar RESET
@@ -19,8 +19,10 @@ scoreboard players test Time RESEThidden 20
 scoreboard players reset Time RESEThidden
 scoreboard players remove Time RESET 1
 scoreboard players test Time RESET 0 0
-fill 183 60 2163 183 60 2163 redstone_block 0 replace stone 0 # turns on next section
-fill 183 60 2161 183 60 2161 stone 0 replace redstone_block 0 # turns off this ticking section
+# turns on next section
+fill 183 60 2163 183 60 2163 redstone_block replace stone
+# turns off this ticking section
+fill 183 60 2161 183 60 2161 stone replace redstone_block
 scoreboard objectives remove RESEThidden
 scoreboard players set Resetting... RESET 0
 scoreboard players reset Time RESET
@@ -31,7 +33,8 @@ scoreboard players reset Time RESET
 tp @e[type=!player] ~ ~-300 ~
 scoreboard objectives add reset dummy
 # triggers map generation
-fill 183 64 2161 183 64 2161 redstone_block 0 replace stone     # triggers Reset Block 1
+# triggers Reset Block 1
+fill 183 64 2161 183 64 2161 redstone_block replace stone
 scoreboard objectives add KILLALL dummy
 # stop re-entry
 fill 164 4 2167 164 4 2168 obsidian
@@ -50,12 +53,13 @@ tp @a[scores={temp=0}] 157 2 2165 -90 0
 gamemode adventure @a[scores={temp=0}]
 
 clear @a[scores={temp=0..1}]
-effect give @a[scores={temp=0..1}] clear
-xp -2147483648L @a[scores={temp=0..1}]
-effect give @a[scores={temp=0..1}] minecraft:saturation 1000000 255 true
+effect clear @a[scores={temp=0..1}]
+experience set @a[scores={temp=0..1}] 0 points
+experience set @a[scores={temp=0..1}] 0 levels
+effect give @a[scores={temp=0..1}] minecraft:saturation infinite 255 true
 effect give @a[scores={temp=0..1}] minecraft:instant_health 2 10 true
-effect give @a[scores={temp=0..1}] minecraft:resistance 100000 5 true
-effect give @a[scores={temp=0..1}] minecraft:weakness 100000 5 true
+effect give @a[scores={temp=0..1}] minecraft:resistance infinite 5 true
+effect give @a[scores={temp=0..1}] minecraft:weakness infinite 5 true
 
 scoreboard objectives remove temp
 # add redundant Resetting... display
