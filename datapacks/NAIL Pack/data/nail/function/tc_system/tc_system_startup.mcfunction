@@ -11,26 +11,26 @@ scoreboard players set @a[gamemode=!spectator] TCrandom 0
 
 # test how many specific team captains
 scoreboard objectives add temp dummy
-scoreboard players set @p temp 0
-execute as @r[scores={TCrandom=0},x=3,y=213,z=17,dx=0,dy=0,dz=0] run scoreboard players add @p[scores={temp=0..}] temp 1
-execute as @r[scores={TCrandom=0},x=3,y=213,z=19,dx=0,dy=0,dz=0] run scoreboard players add @p[scores={temp=0..}] temp 1
+scoreboard players set fake! temp 0
+execute as @r[scores={TCrandom=0},x=3,y=213,z=17,dx=0,dy=0,dz=0] run scoreboard players add fake! temp 1
+execute as @r[scores={TCrandom=0},x=3,y=213,z=19,dx=0,dy=0,dz=0] run scoreboard players add fake! temp 1
 
 # 0 specific team captains
-execute as @p[scores={temp=0}] run scoreboard players set @r[scores={TCrandom=0}] TCrandom 1
-execute as @p[scores={temp=0}] run scoreboard players set @r[scores={TCrandom=0}] TCrandom 2
+execute if score fake! temp matches 0 run scoreboard players set @r[scores={TCrandom=0}] TCrandom 1
+execute if score fake! temp matches 0 run scoreboard players set @r[scores={TCrandom=0}] TCrandom 2
 
 # 1 specific team captain
-execute as @p[scores={temp=1}] run scoreboard players set @r[scores={TCrandom=0},dz=0,dx=0,dy=0,y=213,x=3,z=17] TCrandom -1
-execute as @p[scores={temp=1}] run scoreboard players set @r[scores={TCrandom=0},dz=0,dx=0,dy=0,y=213,x=3,z=19] TCrandom -1
-execute as @p[scores={temp=1}] run scoreboard players set @r[scores={TCrandom=0}] TCrandom -1
-execute as @p[scores={temp=1}] run scoreboard players set @r[scores={TCrandom=-1}] TCrandom 1
-execute as @p[scores={temp=1}] run scoreboard players set @r[scores={TCrandom=-1}] TCrandom 2
+execute if score fake! temp matches 1 run scoreboard players set @r[scores={TCrandom=0},dz=0,dx=0,dy=0,y=213,x=3,z=17] TCrandom -1
+execute if score fake! temp matches 1 run scoreboard players set @r[scores={TCrandom=0},dz=0,dx=0,dy=0,y=213,x=3,z=19] TCrandom -1
+execute if score fake! temp matches 1 run scoreboard players set @r[scores={TCrandom=0}] TCrandom -1
+execute if score fake! temp matches 1 run scoreboard players set @r[scores={TCrandom=-1}] TCrandom 1
+execute if score fake! temp matches 1 run scoreboard players set @r[scores={TCrandom=-1}] TCrandom 2
 
 # 2 specific team captains
-execute as @p[scores={temp=2}] run scoreboard players set @r[scores={TCrandom=0},dz=0,dx=0,dy=0,y=213,x=3,z=17] TCrandom -1
-execute as @p[scores={temp=2}] run scoreboard players set @r[scores={TCrandom=0},dz=0,dx=0,dy=0,y=213,x=3,z=19] TCrandom -1
-execute as @p[scores={temp=2}] run scoreboard players set @r[scores={TCrandom=-1}] TCrandom 1
-execute as @p[scores={temp=2}] run scoreboard players set @r[scores={TCrandom=-1}] TCrandom 2
+execute if score fake! temp matches 2 run scoreboard players set @r[scores={TCrandom=0},dz=0,dx=0,dy=0,y=213,x=3,z=17] TCrandom -1
+execute if score fake! temp matches 2 run scoreboard players set @r[scores={TCrandom=0},dz=0,dx=0,dy=0,y=213,x=3,z=19] TCrandom -1
+execute if score fake! temp matches 2 run scoreboard players set @r[scores={TCrandom=-1}] TCrandom 1
+execute if score fake! temp matches 2 run scoreboard players set @r[scores={TCrandom=-1}] TCrandom 2
 
 # remove temp
 scoreboard objectives remove temp
