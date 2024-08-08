@@ -33,3 +33,6 @@ execute if score Tick! T1StartTimer matches -1.. run function nail:ready/t1_coun
 
 # MapMode 3 Automatic Mode - Minimum Players display
 execute if score fake! MapMode matches 3 run function nail:displays/minimum_players
+
+# Team Captain System
+execute as @p[scores={TCrandom=-2..}] run function nail:tc_system/tc_system_tick

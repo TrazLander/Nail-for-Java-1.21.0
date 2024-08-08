@@ -1,8 +1,5 @@
 # I don't know what these do yet nothing was labeled
 
-# tick
-tp @a[scores={TCrandom=21},dz=0,dx=43,dy=5,y=6,x=246,z=2237] 257 38 2246 180 0
-tp @a[scores={TCrandom=22},dz=0,dx=43,dy=5,y=6,x=246,z=2237] 279 38 2246 180 0
 
 
 # run - 177 149 2163
@@ -18,8 +15,8 @@ execute as @a[scores={TCrandom=3..16}] run scoreboard players set @a[scores={tem
 
 execute as @a[scores={temp=1..}] run fill 272 23 2245 272 23 2245 stone replace redstone_block
 execute as @a[scores={temp=1..}] run scoreboard players set @a[scores={TCrandom=2}] TCcurrentcap 1
-
-execute as @a[scores={temp=0}] run fill 177 153 2161 177 153 2161 redstone_block replace stone
+# open lane selection
+execute as @a[scores={temp=0}] run function nail:tc_system/lane_selection_open
 execute as @a[scores={temp=0}] run tp @a[scores={TCrandom=2}] 272 26 2247 0 0
 
 scoreboard objectives remove temp
@@ -38,8 +35,8 @@ execute as @a[scores={TCrandom=3..16}] run scoreboard players set @a[scores={tem
 
 execute as @a[scores={temp=1..}] run fill 264 23 2245 264 23 2245 stone replace redstone_block
 execute as @a[scores={temp=1..}] run scoreboard players set @a[scores={TCrandom=1}] TCcurrentcap 1
-
-execute as @a[scores={temp=0}] run fill 177 153 2161 177 153 2161 redstone_block replace stone
+# open lane selection
+execute as @a[scores={temp=0}] run function nail:tc_system/lane_selection_open
 execute as @a[scores={temp=0}] run tp @a[scores={TCrandom=2}] 272 26 2247 0 0
 
 scoreboard objectives remove temp
