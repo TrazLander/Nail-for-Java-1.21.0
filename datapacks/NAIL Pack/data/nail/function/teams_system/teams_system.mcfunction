@@ -6,10 +6,6 @@ fill 187 82 2161 187 82 2161 redstone_block 0 replace stone 0
 execute as @p run detect -3 213 18 minecraft:stone_button 9 execute as @s run fill 190 82 2161 190 82 2161 redstone_block 0 replace stone 0
 execute as @p run detect 3 214 18 minecraft:stone_button 10 execute as @s run fill 190 82 2161 190 82 2161 redstone_block 0 replace stone 0
 
-# tick
-execute as @p run detect 3 214 18 minecraft:stone_button 2 scoreboard players set @a[x=236,y=2,z=2227,dx=59,dy=50,dz=29,gamemode=adventure] Teams 0
-
-
 # run
 # fill buttoncheck
 fill 211 82 2161 211 82 2161 redstone_block 0 replace stone 0

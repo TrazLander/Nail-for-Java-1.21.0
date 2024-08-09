@@ -78,4 +78,9 @@ execute if score fake! Cannon2 matches 1.. run execute unless entity @p[x=42,y=2
 execute if entity @p[x=42,y=212,z=12,dx=0,dy=0,dz=2] run function nail:cannon_range/cannon_3_clock
 execute if score fake! Cannon3 matches 1.. run execute unless entity @p[x=42,y=212,z=12,dx=0,dy=0,dz=0] run execute unless entity @p[x=42,y=212,z=14,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon3
 
+
+# Remove people stuck in the Team Captain System from logouts/disconnects
+execute unless entity @p[scores={TCrandom=-3..}] run scoreboard players set @a[x=236,y=2,z=2227,dx=59,dy=50,dz=29,gamemode=adventure] Teams 0
+
+
 # specific player check
