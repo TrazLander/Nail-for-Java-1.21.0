@@ -2,44 +2,11 @@
 
 
 
-# run - 177 149 2163
-tellraw @a ["",{"selector":"@a[scores={TCrandom=1}]","color":"light_purple"},{"text":" - ","color":"white"},{"selector":"@a[scores={TCrandom=20}]","color":"light_purple"}]
-scoreboard players set @a[scores={TCrandom=20}] TCrandom 21
-tp @a[scores={TCrandom=1}] 264 26 2247 180 0
-fill 264 23 2245 264 23 2245 redstone_block replace stone
-scoreboard players set @a[scores={TCrandom=1}] TCcurrentcap 0
-
-scoreboard objectives add temp dummy
-scoreboard players set @p temp 0
-execute as @a[scores={TCrandom=3..16}] run scoreboard players set @a[scores={temp=0}] temp 1
-
-execute as @a[scores={temp=1..}] run fill 272 23 2245 272 23 2245 stone replace redstone_block
-execute as @a[scores={temp=1..}] run scoreboard players set @a[scores={TCrandom=2}] TCcurrentcap 1
-# open lane selection
-execute as @a[scores={temp=0}] run function nail:tc_system/lane_selection_open
-execute as @a[scores={temp=0}] run tp @a[scores={TCrandom=2}] 272 26 2247 0 0
-
-scoreboard objectives remove temp
+# run
 
 
 # run - 177 149 2165
-tellraw @a ["",{"selector":"@a[scores={TCrandom=2}]","color":"dark_green"},{"text":" - ","color":"white"},{"selector":"@a[scores={TCrandom=20}]","color":"dark_green"}]
-scoreboard players set @a[scores={TCrandom=20}] TCrandom 22
-tp @a[scores={TCrandom=2}] 272 26 2247 180 0
-fill 272 23 2245 272 23 2245 redstone_block replace stone
-scoreboard players set @a[scores={TCrandom=2}] TCcurrentcap 0
 
-scoreboard objectives add temp dummy
-scoreboard players set @p temp 0
-execute as @a[scores={TCrandom=3..16}] run scoreboard players set @a[scores={temp=0}] temp 1
-
-execute as @a[scores={temp=1..}] run fill 264 23 2245 264 23 2245 stone replace redstone_block
-execute as @a[scores={temp=1..}] run scoreboard players set @a[scores={TCrandom=1}] TCcurrentcap 1
-# open lane selection
-execute as @a[scores={temp=0}] run function nail:tc_system/lane_selection_open
-execute as @a[scores={temp=0}] run tp @a[scores={TCrandom=2}] 272 26 2247 0 0
-
-scoreboard objectives remove temp
 
 
 # run - 177 149 2167

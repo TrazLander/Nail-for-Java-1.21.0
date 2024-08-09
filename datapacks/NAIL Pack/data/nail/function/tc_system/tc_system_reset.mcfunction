@@ -32,7 +32,6 @@ fill 248 24 2238 248 24 2238 nether_bricks replace redstone_block
 fill 287 24 2238 287 24 2238 nether_bricks replace redstone_block
 
 # remove scoreboards
-scoreboard objectives remove TCcurrentcap
 scoreboard objectives remove TCrandom
 
 # remove people stuck in the team captain system
