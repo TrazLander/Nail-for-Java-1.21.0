@@ -32,7 +32,7 @@ scoreboard players set @a[scores={Teams=1},gamemode=adventure,dz=195,dx=39,dy=9,
 scoreboard players set @a[scores={Teams=1},gamemode=spectator,dz=20,dx=12,dy=9,y=189,x=-17,z=110] LaneProtection 1
 scoreboard players set @a[scores={Teams=1},gamemode=adventure,dz=20,dx=12,dy=9,y=189,x=-17,z=110] LaneProtection 1
 effect give @a[scores={LaneProtection=0}] instant_damage 1000000 0 true
-effect give @a[scores={LaneProtection=1}] instant_damage 0
+effect clear @a[scores={LaneProtection=1}] instant_damage
 gamemode adventure @a[scores={LaneProtection=0}]
 gamemode survival @a[scores={LaneProtection=1}]
 scoreboard players reset * LaneProtection
@@ -47,7 +47,7 @@ scoreboard players set @a[scores={Teams=1..2},gamemode=adventure,dz=195,dx=39,dy
 scoreboard players set @a[scores={Teams=1..2},gamemode=spectator,dz=20,dx=12,dy=9,y=189,x=-17,z=110] LaneProtection 1
 scoreboard players set @a[scores={Teams=1..2},gamemode=adventure,dz=20,dx=12,dy=9,y=189,x=-17,z=110] LaneProtection 1
 effect give @a[scores={LaneProtection=0}] instant_damage 1000000 0 true
-effect give @a[scores={LaneProtection=1}] instant_damage 0
+effect clear @a[scores={LaneProtection=1}] instant_damage
 gamemode adventure @a[scores={LaneProtection=0}]
 gamemode survival @a[scores={LaneProtection=1}]
 scoreboard players reset * LaneProtection

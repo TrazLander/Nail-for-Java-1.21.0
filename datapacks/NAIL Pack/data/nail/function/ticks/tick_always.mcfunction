@@ -81,6 +81,3 @@ execute if score fake! Cannon3 matches 1.. run execute unless entity @p[x=42,y=2
 
 # Remove people stuck in the Team Captain System from logouts/disconnects
 execute unless entity @p[scores={TCrandom=-3..}] run scoreboard players set @a[x=236,y=2,z=2227,dx=59,dy=50,dz=29,gamemode=adventure] Teams 0
-
-
-# specific player check

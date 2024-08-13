@@ -1,14 +1,16 @@
 # run - before game
-fill 183 82 2161 183 82 2161 redstone_block 0 replace stone 0
-fill 187 82 2161 187 82 2161 redstone_block 0 replace stone 0
+fill 183 82 2161 183 82 2161 redstone_block replace stone
+fill 187 82 2161 187 82 2161 redstone_block replace stone
 
 # tick
-execute as @p run detect -3 213 18 minecraft:stone_button 9 execute as @s run fill 190 82 2161 190 82 2161 redstone_block 0 replace stone 0
-execute as @p run detect 3 214 18 minecraft:stone_button 10 execute as @s run fill 190 82 2161 190 82 2161 redstone_block 0 replace stone 0
+# random team button pressed
+execute if block -3 213 18 minecraft:stone_button[face=wall,facing=east,powered=true] run fill 190 82 2161 190 82 2161 redstone_block replace stone
+# team captain system button pressed
+execute if block 3 214 18 minecraft:stone_button[face=wall,facing=west,powered=true] run fill 190 82 2161 190 82 2161 redstone_block 0 replace stone 0
 
 # run
 # fill buttoncheck
-fill 211 82 2161 211 82 2161 redstone_block 0 replace stone 0
+fill 211 82 2161 211 82 2161 redstone_block replace stone
 # add temp
 scoreboard objectives add temp dummy
 # test for game status

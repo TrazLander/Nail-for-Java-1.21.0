@@ -71,6 +71,11 @@ execute if score fake! MapMode matches 3 run scoreboard objectives add QueueSet 
 
 # Initial Min and Max Players
 # I'm too lazy to actually integrate this, but this works
-# scoreboard objectives add MinMax dummy
-# scoreboard players set Min! MinMax 8
-# scoreboard players set Max! MinMax 12
+scoreboard objectives add MinMax dummy
+scoreboard players set Min! MinMax 8
+scoreboard players set Max! MinMax 12
+
+# Queue add to teams
+scoreboard objectives remove QueueTeamsReady
+execute if score fake! MapMode matches 3 run scoreboard objectives add QueueTeamsReady dummy
+execute if score fake! MapMode matches 3 run scoreboard players set fake! QueueTeamsReady 1

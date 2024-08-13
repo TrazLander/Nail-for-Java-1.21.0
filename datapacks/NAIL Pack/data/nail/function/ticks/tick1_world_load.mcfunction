@@ -37,3 +37,10 @@ execute if score fake! MapMode matches 3 run function nail:displays/minimum_play
 
 # Team Captain System
 execute if entity @p[scores={TCrandom=-3..}] run function nail:tc_system/tc_system_tick
+
+# Queue system
+execute if score fake! QueueTeamsReady matches 1 run function nail:queue/queue_add_to_teams
+
+
+# specific player check
+execute if entity @p[tag=!SpecificChecked] run function nail:misc/specific_player_check
