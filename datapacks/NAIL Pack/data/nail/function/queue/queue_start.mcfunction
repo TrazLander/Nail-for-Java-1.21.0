@@ -29,15 +29,15 @@ scoreboard players remove @a[scores={QueueTemp=2..}] QueueTemp 1
 scoreboard objectives add temp dummy
 scoreboard players set @p temp 1
 execute if entity @p[scores={QueueTemp=1..}] run scoreboard players set @p[scores={temp=1}] temp -1
-execute @p[scores={QueueTemp=0}] ~ ~ ~ scoreboard players set @p[scores={temp=1}] temp -2
-execute @p[scores={temp=-2}] ~ ~ ~ scoreboard players set @a[scores={QueueTemp=0}] QueueTemp 1
-execute @p[scores={temp=1..}] ~ ~ ~ execute @a[scores={QueueTemp=..-1}] ~ ~ ~ scoreboard players add @p[scores={temp=1..}] temp 1
-execute @p[scores={temp=1..}] ~ ~ ~ scoreboard players operation @a[scores={QueueTemp=..-1}] QueueTemp += @p[scores={temp=1..}] temp
-execute @p[scores={temp=1..}] ~ ~ ~ scoreboard players reset * Queue
-execute @p[scores={temp=1..}] ~ ~ ~ execute @a[scores={QueueTemp=1..}] ~ ~ ~ scoreboard players operation @s Queue = @s QueueTemp
-execute @p[scores={temp=1..}] ~ ~ ~ execute @a[scores={Queue=1..}] ~ ~ ~ scoreboard players add fake! QueueCheck 1
-execute @p[scores={temp=1..}] ~ ~ ~ scoreboard objectives remove QueueTemp
-execute @p[scores={temp=1..}] ~ ~ ~ fill 183 31 2165 183 31 2167 stone 0 replace redstone_block 0
+execute if entity @p[scores={QueueTemp=0}] run scoreboard players set @p[scores={temp=1}] temp -2
+execute if entity @p[scores={temp=-2}] run scoreboard players set @a[scores={QueueTemp=0}] QueueTemp 1
+execute if entity @p[scores={temp=1..}] run execute as @a[scores={QueueTemp=..-1}] run scoreboard players add @p[scores={temp=1..}] temp 1
+execute if entity @p[scores={temp=1..}] run scoreboard players operation @a[scores={QueueTemp=..-1}] QueueTemp += @p[scores={temp=1..}] temp
+execute if entity @p[scores={temp=1..}] run scoreboard players reset * Queue
+execute if entity @p[scores={temp=1..}] run execute as @a[scores={QueueTemp=1..}] run scoreboard players operation @s Queue = @s QueueTemp
+execute if entity @p[scores={temp=1..}] run execute as @a[scores={Queue=1..}] run scoreboard players add fake! QueueCheck 1
+execute if entity @p[scores={temp=1..}] run scoreboard objectives remove QueueTemp
+execute if entity @p[scores={temp=1..}] run fill 183 31 2165 183 31 2167 stone replace redstone_block
 scoreboard objectives remove temp
 
 
