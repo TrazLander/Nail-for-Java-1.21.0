@@ -6,10 +6,10 @@ scoreboard players set fake! gamestatus 1
 function nail:setup/set_gamerules
 
 # set MapMode
-# 1 = friendlies, 2 = tournament, 3 = automatic
+# 1 = tournament, 2 = friendlies (default), 3 = automatic
 scoreboard objectives remove MapMode
 scoreboard objectives add MapMode dummy
-scoreboard players set fake! MapMode 1
+scoreboard players set fake! MapMode 2
 
 # Playing display
 scoreboard objectives remove GameStart

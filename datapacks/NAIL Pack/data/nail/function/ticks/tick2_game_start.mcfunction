@@ -70,5 +70,11 @@ execute if score fake! TimerMins2 matches ..0 run execute if score fake! TimerMi
 function nail:game_clock/game_clock
 
 
+# random team button pressed
+execute if block -3 213 18 minecraft:stone_button[powered=true] run tellraw @a[x=0,y=213,z=18,distance=..5] [{"text":"You may not use Team Selection when a game has already started.","italic":true,"color":"red"}]
+# team captain system button pressed
+execute if block 3 214 18 minecraft:stone_button[powered=true] run tellraw @a[x=0,y=213,z=18,distance=..5] [{"text":"You may not use Team Selection when a game has already started.","italic":true,"color":"red"}]
+
+
 # respawn rotate - no longer needed as of 1.16.2 since they added a rotation to /spawnpoint, but will be needed if map converts to bedrock
 #function nail:game/respawn_rotate
