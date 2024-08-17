@@ -1,0 +1,10 @@
+execute if score fake! TimerMins1 matches 0 run place template nail:clock_numbers/clock_0 2 240 236
+execute if score fake! TimerMins1 matches 1 run place template nail:clock_numbers/clock_1 2 240 236
+execute if score fake! TimerMins1 matches 2 run place template nail:clock_numbers/clock_2 2 240 236
+execute if score fake! TimerMins1 matches 3 run place template nail:clock_numbers/clock_3 2 240 236
+execute if score fake! TimerMins1 matches 4 run place template nail:clock_numbers/clock_4 2 240 236
+execute if score fake! TimerMins1 matches 5 run place template nail:clock_numbers/clock_5 2 240 236
+execute if score fake! TimerMins1 matches 6 run place template nail:clock_numbers/clock_6 2 240 236
+execute if score fake! TimerMins1 matches 7 run place template nail:clock_numbers/clock_7 2 240 236
+execute if score fake! TimerMins1 matches 8 run place template nail:clock_numbers/clock_8 2 240 236
+execute if score fake! TimerMins1 matches 9 run place template nail:clock_numbers/clock_9 2 240 236
