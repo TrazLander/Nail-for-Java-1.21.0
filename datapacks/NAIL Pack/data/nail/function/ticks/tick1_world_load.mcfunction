@@ -50,5 +50,3 @@ execute if entity @p[tag=!SpecificChecked] run function nail:misc/specific_playe
 execute if block -3 213 18 minecraft:stone_button[powered=true] run fill 190 82 2161 190 82 2161 redstone_block replace stone
 # team captain system button pressed
 execute if block 3 214 18 minecraft:stone_button[powered=true] run fill 190 82 2161 190 82 2161 redstone_block replace stone
-# tick - 211 82 2161 buttoncheck - allows trigger of team systems after buttons have depressed
-execute if block -3 213 18 minecraft:stone_button[powered=false] run execute if block 3 214 18 minecraft:stone_button[powered=false] run fill 190 82 2161 211 82 2161 stone replace redstone_block
