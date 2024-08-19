@@ -2,15 +2,13 @@
 fill 183 43 2166 183 43 2166 stone 0 replace redstone_block 0
 scoreboard objectives remove ServerStartTimer
 scoreboard objectives remove Waiting
-scoreboard players operation @p MapMode = fake! MapMode
-execute @p[scores={MapMode=3}] ~ ~ ~ fill 183 43 2166 183 43 2166 redstone_block 0 replace stone 0
-scoreboard players reset @a MapMode
+execute if score fake! MapMode matches 3 run fill 183 43 2166 183 43 2166 redstone_block replace stone
 
 # ticking (all below)
 scoreboard objectives add temp dummy
-scoreboard players set @p temp 0
-scoreboard players operation @p[scores={temp=0}] temp = Min! MinMax
-execute @a[scores={Queue=1..}] ~ ~ ~ scoreboard players remove @p[scores={temp=-100000..}] temp 1
+scoreboard players set fake! temp 0
+scoreboard players operation fake! temp = Min! MinMax
+execute as @a[scores={Queue=1..}] run scoreboard players remove fake! temp 1
 
 # cancel countdown
 scoreboard players operation @p[scores={temp=1..}] ServerStartTimer = Second1! ServerStartTimer
