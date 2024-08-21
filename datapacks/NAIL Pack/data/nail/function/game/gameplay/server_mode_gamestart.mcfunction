@@ -34,20 +34,20 @@ execute if score fake! ServerStartTimer matches 75.. run scoreboard players set 
 execute if score fake! ServerStartTimer matches 75.. run scoreboard objectives remove ServerStartTimer
 
 # setup countdown
-execute @p[scores={temp=..0}] ~ ~ ~ scoreboard objectives remove Waiting
-execute @p[scores={temp=..0}] ~ ~ ~ scoreboard players reset WaitingForPlayers… GameStart
-execute @p[scores={temp=..0}] ~ ~ ~ scoreboard objectives add ServerStartTimer dummy
-execute @p[scores={temp=..0}] ~ ~ ~ scoreboard players remove Tick! ServerStartTimer 1
+execute if score fake! temp matches ..0 run scoreboard objectives remove Waiting
+execute if score fake! temp matches ..0 run scoreboard players reset WaitingForPlayers… GameStart
+execute if score fake! temp matches ..0 run scoreboard objectives add ServerStartTimer dummy
+execute if score fake! temp matches ..0 run scoreboard players remove Tick! ServerStartTimer 1
 
-execute @p[scores={temp=..0}] ~ ~ ~ scoreboard players operation @p[scores={temp=..0}] ServerStartTimer = Tick! ServerStartTimer
-execute @p[scores={ServerStartTimer=..-1}] ~ ~ ~ scoreboard players set Tick! ServerStartTimer 19
-execute @p[scores={ServerStartTimer=20..,temp=..0}] ~ ~ ~ scoreboard players operation Starting... GameStart = Second1! ServerStartTimer
-execute @p[scores={ServerStartTimer=..-1}] ~ ~ ~ scoreboard players remove Second1! ServerStartTimer 1
-scoreboard players reset @a[scores={ServerStartTimer=0..}] ServerStartTimer
+execute if score fake! temp matches ..0 run scoreboard players operation fake! ServerStartTimer = Tick! ServerStartTimer
+execute if score fake! ServerStartTimer matches ..-1 run scoreboard players set Tick! ServerStartTimer 19
+execute if score fake! ServerStartTimer matches 20.. run execute if score fake! temp matches ..0 run scoreboard players operation Starting... GameStart = Second1! ServerStartTimer
+execute if score fake! ServerStartTimer matches ..-1 run scoreboard players remove Second1! ServerStartTimer 1
+scoreboard players reset fake! ServerStartTimer
 
-scoreboard players operation @p[scores={ServerStartTimer=..-1}] ServerStartTimer = Second1! ServerStartTimer
-execute @p[scores={ServerStartTimer=..-1}] ~ ~ ~ scoreboard players set Second1! ServerStartTimer 89
-execute @p[scores={ServerStartTimer=-1..89}] ~ ~ ~ scoreboard players operation Starting... GameStart = Second1! ServerStartTimer
+execute if score fake! ServerStartTimer matches ..-1 run scoreboard players operation fake! ServerStartTimer = Second1! ServerStartTimer
+execute if score fake! ServerStartTimer matches ..-1 scoreboard players set Second1! ServerStartTimer 89
+execute if score fake! ServerStartTimer matches -1..89 run scoreboard players operation Starting... GameStart = Second1! ServerStartTimer
 
 execute @p[scores={ServerStartTimer=1..74}] ~ ~ ~ scoreboard players set fake! QueueTeamsReady 1
 
