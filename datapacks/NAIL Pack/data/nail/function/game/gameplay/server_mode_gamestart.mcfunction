@@ -49,22 +49,22 @@ execute if score fake! ServerStartTimer matches ..-1 run scoreboard players oper
 execute if score fake! ServerStartTimer matches ..-1 scoreboard players set Second1! ServerStartTimer 89
 execute if score fake! ServerStartTimer matches -1..89 run scoreboard players operation Starting... GameStart = Second1! ServerStartTimer
 
-execute @p[scores={ServerStartTimer=1..74}] ~ ~ ~ scoreboard players set fake! QueueTeamsReady 1
+execute if score fake! ServerStartTimer matches 1..74 run scoreboard players set fake! QueueTeamsReady 1
 
-execute @p[scores={ServerStartTimer=1..5}] ~ ~ ~ execute @a ~ ~ ~ playsound item.flintandsteel.use master @p ~ ~ ~ 1 .5 1
-execute @p[scores={ServerStartTimer=5}] ~ ~ ~ fill -3 215 47 -3 215 47 redstone_block 0
-execute @p[scores={ServerStartTimer=4}] ~ ~ ~ fill -2 215 47 -2 215 47 redstone_block 0
-execute @p[scores={ServerStartTimer=3}] ~ ~ ~ fill -1 215 47 -1 215 47 redstone_block 0
-execute @p[scores={ServerStartTimer=2}] ~ ~ ~ fill 0 215 47 0 215 47 redstone_block 0
-execute @p[scores={ServerStartTimer=1}] ~ ~ ~ fill 1 215 47 1 215 47 redstone_block 0
-execute @p[scores={ServerStartTimer=0}] ~ ~ ~ fill 2 215 47 2 215 47 redstone_block 0
+execute if score fake! ServerStartTimer matches 1..5 run execute @a ~ ~ ~ playsound item.flintandsteel.use master @p ~ ~ ~ 1 .5 1
+execute if score fake! ServerStartTimer matches 5 run fill -3 215 47 -3 215 47 redstone_block 0
+execute if score fake! ServerStartTimer matches 4 run fill -2 215 47 -2 215 47 redstone_block 0
+execute if score fake! ServerStartTimer matches 3 run fill -1 215 47 -1 215 47 redstone_block 0
+execute if score fake! ServerStartTimer matches 2 run fill 0 215 47 0 215 47 redstone_block 0
+execute if score fake! ServerStartTimer matches 1 run fill 1 215 47 1 215 47 redstone_block 0
+execute if score fake! ServerStartTimer matches 0 run fill 2 215 47 2 215 47 redstone_block 0
 
-execute @p[scores={ServerStartTimer=0}] ~ ~ ~ fill 183 47 2161 183 47 2161 redstone_block 0 replace stone 0
+execute if score fake! ServerStartTimer matches 0 run fill 183 47 2161 183 47 2161 redstone_block replace stone
 
-execute @p[scores={ServerStartTimer=0}] ~ ~ ~ scoreboard objectives remove ServerStartTimer
-scoreboard players reset @a ServerStartTimer
+execute if score fake! ServerStartTimer matches 0 run scoreboard objectives remove ServerStartTimer
+scoreboard players reset fake! ServerStartTimer
 scoreboard objectives remove temp
 
 # turn off system after game
 fill ~ ~-1 ~ ~ ~-1 ~ wool 2 replace redstone_block 0
-fill 183 43 2166 183 43 2166 stone 0 replace redstone_block 0
+fill 183 43 2166 183 43 2166 stone replace redstone_block
