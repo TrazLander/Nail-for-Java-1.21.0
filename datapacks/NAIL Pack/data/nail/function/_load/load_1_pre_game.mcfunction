@@ -24,7 +24,7 @@ scoreboard players set @a[scores={SwapSidesTemp=11}] Teams 11
 scoreboard players set @a[scores={SwapSidesTemp=12}] Teams 12
 scoreboard objectives remove SwapSidesTemp
 
-# setup java version teams
+# setup teams
 function nail:_load/setup_teams
 
 # clear various scoreboards that might be up during a mid-game reset
@@ -32,7 +32,6 @@ scoreboard objectives remove Enderman
 scoreboard objectives remove T1StartTimer
 scoreboard objectives remove T2StartTimer
 scoreboard objectives remove TroughKill
-
 # scoreboard objectives remove T1RespawnRotate
 scoreboard objectives remove TNTboard
 scoreboard objectives remove Kills
@@ -70,7 +69,6 @@ scoreboard objectives remove QueueSet
 execute if score fake! MapMode matches 3 run scoreboard objectives add QueueSet dummy
 
 # Initial Min and Max Players
-# I'm too lazy to actually integrate this, but this works
 scoreboard objectives add MinMax dummy
 scoreboard players set Min! MinMax 8
 scoreboard players set Max! MinMax 12

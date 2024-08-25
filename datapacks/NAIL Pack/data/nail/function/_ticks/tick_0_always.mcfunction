@@ -1,8 +1,11 @@
+# test if fresh world and do pre-setup
+execute unless score fake! gamestatus matches 1..3 run function nail:_load/load_1_pre_game
+
+
 # gamestatus specific functions
 execute if score fake! gamestatus matches 1 run function nail:_ticks/tick_1_pre_game
 execute if score fake! gamestatus matches 2 run function nail:_ticks/tick_2_during_game
 execute if score fake! gamestatus matches 3 run function nail:_ticks/tick_3_after_game
-
 
 # SEND TO LOBBY
 scoreboard players add @a Teams 0
