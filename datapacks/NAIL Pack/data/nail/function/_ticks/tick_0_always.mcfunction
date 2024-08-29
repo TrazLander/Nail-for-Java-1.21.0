@@ -16,7 +16,7 @@ scoreboard players set @a[x=165,y=3,z=2192,dx=0,dy=0,dz=1,gamemode=!spectator] T
 execute as @p[scores={Teams=0}] run function nail:game/player/playerjoin
 
 
-# someone enters play arch from lobby
+# someone enters Play arch from lobby
 scoreboard players set @a[x=164,y=4,z=2167,dx=0,dy=0,dz=1,gamemode=!spectator] Teams 21
 execute as @p[scores={Teams=21}] run function nail:game/player/selectplay
 
@@ -59,7 +59,8 @@ execute as @p[scores={Teams=11}] run function nail:game/player/t1_trough_in_tp
 scoreboard players set @a[x=-4,y=212,z=14,dx=1,dy=0,dz=0,gamemode=!spectator] Teams 12
 execute as @p[scores={Teams=12}] run function nail:game/player/t2_trough_in_tp
 
-
+# update difficulty with a delay to easily depawn all current mobs
+execute if score fake! difficultytemp matches 1.. run function nail:game/gameplay/difficulty_update
 
 
 # BACKDOOR - TOTALLY FORGET TO REMOVE THIS LATER

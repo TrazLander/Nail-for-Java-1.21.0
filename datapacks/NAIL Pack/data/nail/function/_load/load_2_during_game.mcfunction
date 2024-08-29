@@ -26,14 +26,13 @@ scoreboard objectives add LaneProtection dummy
 #scoreboard objectives add T1RespawnRotate dummy
 
 # time set
-execute if score fake! DefenderHandicap matches 0 run time set 12000
+execute unless score fake! DefenderHandicap matches 1 run time set 12000
 execute if score fake! DefenderHandicap matches 1 run time set 10800
 
 # difficulty
 difficulty peaceful
-fill ~ ~1 ~ ~ ~1 ~ redstone_block replace stone
-fill ~ ~-1 ~ ~ ~-1 ~ stone replace redstone_block
-difficulty hard
+scoreboard objectives add difficultytemp dummy
+scoreboard players set fake! difficultytemp 1
 
 # start tracking kills
 scoreboard objectives remove Kills

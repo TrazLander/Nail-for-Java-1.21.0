@@ -17,7 +17,7 @@ forceload remove 0 226 -1 226
 scoreboard objectives remove LaneProtection
 
 # time set
-execute if score fake! DefenderHandicap matches 0 run time set 12000
+execute unless score fake! DefenderHandicap matches 1 run time set 12000
 execute if score fake! DefenderHandicap matches 1 run time set 10800
 
 # difficulty

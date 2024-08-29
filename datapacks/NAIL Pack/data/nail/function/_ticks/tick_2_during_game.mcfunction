@@ -21,8 +21,6 @@ execute if score fake! TroughKill matches 1..2 run scoreboard players add @a[x=-
 execute if score fake! TroughKill matches 1..2 run kill @a[scores={Teams=0},gamemode=!spectator,dz=0,dx=6,dy=2,y=212,x=-3,z=46]
 
 # lane protection
-execute if score Tick! T2StartTimer matches 0.. run 
-
 scoreboard players set @a[gamemode=spectator,scores={Teams=1}] LaneProtection 0
 scoreboard players set @a[gamemode=adventure,scores={Teams=1}] LaneProtection 0
 scoreboard players set @a[scores={Teams=1},gamemode=spectator,dz=211,dx=39,dy=59,y=199,x=-20,z=31] LaneProtection 1
@@ -63,10 +61,6 @@ kill @e[x=-20,y=213,z=241,dx=39,dy=10,dz=195,type=#nail:spawn_protect_undesirabl
 tp @a[scores={Teams=1},dz=16,dx=39,dy=53,y=205,x=-20,z=31] ~ ~ ~1 ~ ~
 fill -1 208 34 0 209 34 air
 kill @e[x=-20,y=205,z=31,dx=39,dy=53,dz=16,type=#nail:spawn_protect_undesirables]
-
-# clear beds
-clear @a[scores={Teams=1..2}] minecraft:red_bed
-
 
 # speed to t1 on respawn
 effect give @a[scores={Teams=1},dz=19,dx=7,dy=6,y=216,x=-4,z=414] saturation 1 50 true

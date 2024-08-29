@@ -58,7 +58,7 @@ scoreboard objectives add SpecificPlayer dummy
 scoreboard objectives add DefenderHandicap dummy
 
 # time set
-execute if score fake! DefenderHandicap matches 0 run time set 12000
+execute unless score fake! DefenderHandicap matches 1 run time set 12000
 execute if score fake! DefenderHandicap matches 1 run time set 10800
 
 # difficulty

@@ -36,7 +36,7 @@ gamerule playersNetherPortalCreativeDelay 1
 gamerule playersNetherPortalDefaultDelay 80
 gamerule playersSleepingPercentage 101
 gamerule spawnRadius 0
-gamerule spectatorsGenerateChunks false
+gamerule spectatorsGenerateChunks true
 
 execute if score fake! gamestatus matches 1 run gamerule keepInventory false
 execute if score fake! gamestatus matches 2 run gamerule keepInventory false
