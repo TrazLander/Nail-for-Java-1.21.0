@@ -1,8 +1,5 @@
 scoreboard objectives remove T1StartTimer
 
-# tp out fix
-tp @a[x=3,y=213,z=48,dx=0,dy=0,dz=0,gamemode=!spectator] 2 213 48 ~ ~
-
 # tp players that are currently in spectator mode
 tp @a[gamemode=!adventure,scores={Teams=1}] 0.0 212 48 0 0
 tp @a[gamemode=!adventure,scores={Teams=2}] 0.0 212 46 0 0
@@ -26,21 +23,21 @@ spawnpoint @a[scores={Teams=1}] 0 218 429
 # piston sound at floor
 playsound block.piston.contract master @a 0.0 211 48 .9 .7
 
-# floor remove
-fill -3 211 48 2 211 48 air
 
-# set gamestatus to duringgame
+# set gamestatus to during_game
 scoreboard players set fake! gamestatus 2
 
 # TODO: turn off server mode countdown clock?
 
+# remove from T1 trough: levers, signs, floor
+fill -3 211 48 2 214 48 air
+
+# remove from T2 trough: levers, signs
+fill -3 212 46 2 214 46 air
+
 # keep lever lights on
 fill -5 212 48 -5 212 48 minecraft:lever[face=ceiling,powered=true]
 fill -5 212 46 -5 212 46 minecraft:lever[face=ceiling,powered=true]
-
-# remove levers and signs from both troughs
-fill -3 212 48 2 214 48 air
-fill -3 212 46 2 214 46 air
 
 # run cobweb timers
 clone 183 36 2172 183 36 2172 185 36 2172

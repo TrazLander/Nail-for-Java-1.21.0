@@ -1,8 +1,5 @@
 scoreboard objectives remove T2StartTimer
 
-# tp out fix
-tp @a[x=3,y=213,z=46,dx=0,dy=0,dz=0,gamemode=!spectator] 2 213 46 ~ ~
-
 # confirm trough t2
 scoreboard players set @a[x=-3,y=212,z=46,dx=5,dy=2,dz=0,gamemode=!spectator] Teams 2
 

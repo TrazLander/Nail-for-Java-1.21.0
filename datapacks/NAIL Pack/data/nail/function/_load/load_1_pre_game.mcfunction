@@ -38,11 +38,9 @@ scoreboard objectives remove Kills
 forceload remove 0 226 -1 226
 
 # add beforegame scoreboards
-scoreboard objectives remove Math
-scoreboard objectives add Math dummy
-
 scoreboard objectives remove levers
 execute if score fake! MapMode matches 1..2 run scoreboard objectives add levers dummy
+
 scoreboard objectives remove ReadyDisplay
 scoreboard objectives remove ReadyDisplay2
 execute if score fake! MapMode matches 1..2 run scoreboard objectives add ReadyDisplay dummy
