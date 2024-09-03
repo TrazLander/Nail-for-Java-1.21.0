@@ -23,12 +23,6 @@ spawnpoint @a[scores={Teams=1}] 0 218 429
 # piston sound at floor
 playsound block.piston.contract master @a 0.0 211 48 .9 .7
 
-
-# set gamestatus to during_game
-scoreboard players set fake! gamestatus 2
-
-# TODO: turn off server mode countdown clock?
-
 # remove from T1 trough: levers, signs, floor
 fill -3 211 48 2 214 48 air
 
@@ -40,12 +34,15 @@ fill -5 212 48 -5 212 48 minecraft:lever[face=ceiling,powered=true]
 fill -5 212 46 -5 212 46 minecraft:lever[face=ceiling,powered=true]
 
 # run cobweb timers
-clone 183 36 2172 183 36 2172 185 36 2172
-clone 183 36 2174 183 36 2174 185 36 2174
-fill 185 36 2173 185 36 2173 minecraft:redstone_block
-fill 185 36 2173 185 36 2173 minecraft:stone
+loot spawn 185 36 2172 loot nail:chests/dispenser_1
 scoreboard objectives add cobwebtimer dummy
 scoreboard players set fake! cobwebtimer 1
+# No handicap
+execute if score fake! DefenderHandicap matches 0 run loot spawn -3 215.175 44.8 loot nail:chests/dispenser_1
+execute if score fake! DefenderHandicap matches 0 run loot spawn 2 215.175 44.8 loot nail:chests/dispenser_2
+# handicap
+execute if score fake! DefenderHandicap matches 1 run loot spawn -3 216.375 44.8 loot nail:chests/dispenser_1
+execute if score fake! DefenderHandicap matches 1 run loot spawn 2 216.375 44.8 loot nail:chests/dispenser_2
 
 # start the t2 6-second countdown
 scoreboard objectives add T2StartTimer dummy

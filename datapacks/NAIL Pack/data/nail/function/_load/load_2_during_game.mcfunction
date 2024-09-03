@@ -1,11 +1,10 @@
+# set gamestatus to during_game
+scoreboard players set fake! gamestatus 2
+
 # Automatic Mode - remove Minimum Players scoreboard
 scoreboard objectives remove MinimumPlayers
-
 # remove Playing display
 scoreboard objectives remove GameStart
-
-# set gamestatus to 2
-scoreboard players set fake! gamestatus 2
 
 function nail:_load/set_gamerules
 
@@ -38,7 +37,6 @@ scoreboard players set fake! difficultytemp 1
 scoreboard objectives remove Kills
 scoreboard objectives add Kills playerKillCount
 scoreboard objectives setdisplay list Kills
-
 
 # start game clock
 scoreboard objectives remove TimerTicks
