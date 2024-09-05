@@ -38,22 +38,21 @@ scoreboard objectives remove Kills
 scoreboard objectives add Kills playerKillCount
 scoreboard objectives setdisplay list Kills
 
+# force load game clock
+forceload add 12 236 -13 236
+
 # start game clock
-scoreboard objectives remove TimerTicks
-scoreboard objectives remove TimerSecs1
-scoreboard objectives remove TimerSecs2
-scoreboard objectives remove TimerMins1
-scoreboard objectives remove TimerMins2
-scoreboard objectives add TimerTicks dummy
-scoreboard objectives add TimerSecs1 dummy
-scoreboard objectives add TimerSecs2 dummy
-scoreboard objectives add TimerMins1 dummy
-scoreboard objectives add TimerMins2 dummy
+scoreboard objectives remove TimerBoard
+scoreboard objectives add TimerBoard dummy
 # set 21mins
-scoreboard players set fake! TimerTicks 0
-scoreboard players set fake! TimerSecs1 0
+scoreboard players set Ticks! TimerBoard 0
+scoreboard players set Secs1! TimerBoard 0
 # add 30 seconds for Defender Handicap
-execute if score fake! DefenderHandicap matches 0 run scoreboard players set fake! TimerSecs2 0
-execute if score fake! DefenderHandicap matches 1 run scoreboard players set fake! TimerSecs2 3
-scoreboard players set fake! TimerMins1 1
-scoreboard players set fake! TimerMins2 2
+execute unless score fake! DefenderHandicap matches 1 run scoreboard players set Secs2! TimerBoard 0
+execute if score fake! DefenderHandicap matches 1 run scoreboard players set Secs2! TimerBoard 3
+scoreboard players set Mins1! TimerBoard 1
+scoreboard players set Mins2! TimerBoard 2
+function nail:game/game_clock/minute2
+function nail:game/game_clock/minute1
+function nail:game/game_clock/second2
+function nail:game/game_clock/second1

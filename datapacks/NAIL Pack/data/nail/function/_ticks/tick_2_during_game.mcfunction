@@ -1,3 +1,6 @@
+# game clock
+function nail:game/game_clock/game_clock
+
 # Kill all animals and witches during game
 execute as @e[type=#nail:undesirables] at @s run tp @s[y=0,dy=5000] ~ -2 ~
 
@@ -67,11 +70,9 @@ effect give @a[scores={Teams=1},dz=19,dx=7,dy=6,y=216,x=-4,z=414] speed 25 1 tru
 # t2 victory check
 execute unless block 0 225 226 minecraft:wet_sponge run execute unless block -1 225 226 minecraft:wet_sponge run function nail:game/gameplay/t2_victory
 # t1 victory check
-execute if score fake! TimerMins2 matches ..0 run execute if score fake! TimerMins1 matches ..0 run execute if score fake! TimerSecs2 matches ..0 run execute if score fake! TimerSecs1 matches ..0 run execute if score fake! TimerTicks matches ..0 run function nail:game/gameplay/t1_victory
+execute if score Mins2! TimerBoard matches ..0 run execute if score Mins1! TimerBoard matches ..0 run execute if score Secs2! TimerBoard matches ..0 run execute if score Secs1! TimerBoard matches ..0 run execute if score Ticks! TimerBoard matches ..0 run function nail:game/gameplay/t1_victory
 
 
-# game clock
-function nail:game/game_clock/game_clock
 
 
 # random team button pressed

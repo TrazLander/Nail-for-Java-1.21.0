@@ -1,11 +1,11 @@
 scoreboard players remove Tick! T2StartTimer 1
 execute if score Tick! T2StartTimer matches 0 run scoreboard players remove Second1! T2StartTimer 1
 
-# fill t1 trough floor with barrier blocks and kill any who managed to stay if even possible
+# fill t1 trough floor with barrier blocks and 
 execute if score Tick! T2StartTimer matches 0 run execute if score Second1! T2StartTimer matches 54 run fill -3 211 48 2 211 48 minecraft:barrier
 execute if score Tick! T2StartTimer matches 0 run execute if score Second1! T2StartTimer matches 54 run fill 183 51 2165 183 51 2165 minecraft:redstone_block
 
-# turn on trough kill
+# kill any who managed to stay in trough from team 1 if even possible
 execute if score Tick! T2StartTimer matches 0 run execute if score Second1! T2StartTimer matches 54 run scoreboard players set fake! TroughKill 1
 
 # click click click

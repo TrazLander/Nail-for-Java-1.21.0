@@ -35,6 +35,11 @@ scoreboard objectives remove TroughKill
 # scoreboard objectives remove T1RespawnRotate
 scoreboard objectives remove TNTboard
 scoreboard objectives remove Kills
+scoreboard objectives remove ResetHidden
+scoreboard objectives remove Reset
+scoreboard objectives remove KillAll
+
+
 forceload remove 0 226 -1 226
 
 # add beforegame scoreboards
@@ -75,3 +80,6 @@ scoreboard players set Max! MinMax 12
 scoreboard objectives remove QueueTeamsReady
 execute if score fake! MapMode matches 3 run scoreboard objectives add QueueTeamsReady dummy
 execute if score fake! MapMode matches 3 run scoreboard players set fake! QueueTeamsReady 1
+
+# Automatic Mode - add Minimum Players scoreboard
+execute if score fake! MapMode matches 3 run scoreboard objectives add MinimumPlayers dummy
