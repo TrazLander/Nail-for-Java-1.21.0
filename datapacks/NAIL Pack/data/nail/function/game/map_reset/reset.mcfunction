@@ -12,7 +12,7 @@ fill 152 4 2164 152 4 2166 obsidian
 tp @e[type=!player] ~ ~-300 ~
 # triggers map generation
 # triggers Reset Block 1
-fill 183 64 2161 183 64 2161 redstone_block replace stone
+function nail:game/map_reset/reset_block_1
 scoreboard objectives add KillAll dummy
 
 # set first reset person

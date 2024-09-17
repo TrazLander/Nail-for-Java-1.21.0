@@ -27,7 +27,7 @@ execute as @p[scores={Teams=-11}] run function nail:game/player/spectate
 
 
 # someone goes too far above or below the main platform
-execute as @p[x=-90,y=-81,z=-65,dx=177,dy=200,dz=89] run function nail:game/void_areas/above_and_below_spawn
+execute as @p[x=-90,y=-81,z=-65,dx=177,dy=200,dz=89,gamemode=!creative] run function nail:game/void_areas/above_and_below_spawn
 execute as @p[x=-90,y=255,z=-1,dx=177,dy=100,dz=25,gamemode=adventure] run function nail:game/void_areas/above_and_below_spawn
 
 
