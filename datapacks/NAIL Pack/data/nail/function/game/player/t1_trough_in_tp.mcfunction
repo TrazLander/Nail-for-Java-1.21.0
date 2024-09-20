@@ -9,13 +9,13 @@ execute if score fake! gamestatus matches 1 run effect give @a[scores={Teams=11}
 execute if score fake! gamestatus matches 2 run effect give @a[scores={Teams=11}] minecraft:saturation 1 255 true
 execute if score fake! gamestatus matches 3 run effect give @a[scores={Teams=11}] minecraft:saturation 1000000 255 true
 
-execute if score fake! gamestatus matches 1 run spawnpoint @a[scores={Teams=11}] 0 212 48
-execute if score fake! gamestatus matches 2 run spawnpoint @a[scores={Teams=11}] 0 218 429
-execute if score fake! gamestatus matches 3 run spawnpoint @a[scores={Teams=11}] 0 212 48
+execute if score fake! gamestatus matches 1 run spawnpoint @a[scores={Teams=11}] 200 356 98
+execute if score fake! gamestatus matches 2 run spawnpoint @a[scores={Teams=11}] 200 362 479
+execute if score fake! gamestatus matches 3 run spawnpoint @a[scores={Teams=11}] 200 356 98
 
-execute if score fake! gamestatus matches 1 run tp @a[scores={Teams=11}] 0.0 212 48 0 0
-execute if score fake! gamestatus matches 2 run tp @a[scores={Teams=11}] 0.0 218 429 180 0
-execute if score fake! gamestatus matches 3 run tp @a[scores={Teams=11}] 0.0 212 48 0 0
+execute if score fake! gamestatus matches 1 run tp @a[scores={Teams=11}] 200.0 356 98 0 0
+execute if score fake! gamestatus matches 2 run tp @a[scores={Teams=11}] 200.0 362 479 180 0
+execute if score fake! gamestatus matches 3 run tp @a[scores={Teams=11}] 200.0 356 98 0 0
 
 execute if score fake! gamestatus matches 1 run gamemode adventure @a[scores={Teams=11}]
 execute if score fake! gamestatus matches 2 run gamemode survival @a[scores={Teams=11}]

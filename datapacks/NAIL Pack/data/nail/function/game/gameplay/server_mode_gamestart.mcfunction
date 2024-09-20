@@ -12,7 +12,7 @@ execute as @a[scores={Queue=1..}] run scoreboard players remove fake! temp 1
 
 # cancel countdown
 scoreboard players operation fake! ServerStartTimer = Second1! ServerStartTimer
-execute if score fake! ServerStartTimer matches 1..89 run fill -3 215 47 2 215 47 stone_bricks replace redstone_block
+execute if score fake! ServerStartTimer matches 1..89 run fill 197 359 97 202 359 97 stone_bricks replace redstone_block
 execute if score fake! ServerStartTimer matches 1..89 run scoreboard players reset Starting... GameStart
 execute if score fake! ServerStartTimer matches 1..74 run scoreboard objectives add Waiting dummy
 execute if score fake! ServerStartTimer matches 1..74 run scoreboard players remove Tick! Waiting 1
@@ -52,12 +52,12 @@ execute if score fake! ServerStartTimer matches -1..89 run scoreboard players op
 execute if score fake! ServerStartTimer matches 1..74 run scoreboard players set fake! QueueTeamsReady 1
 
 execute if score fake! ServerStartTimer matches 1..5 run execute as @a run playsound item.flintandsteel.use master @p ~ ~ ~ 1 .5 1
-execute if score fake! ServerStartTimer matches 5 run fill -3 215 47 -3 215 47 redstone_block
-execute if score fake! ServerStartTimer matches 4 run fill -2 215 47 -2 215 47 redstone_block
-execute if score fake! ServerStartTimer matches 3 run fill -1 215 47 -1 215 47 redstone_block
-execute if score fake! ServerStartTimer matches 2 run fill 0 215 47 0 215 47 redstone_block
-execute if score fake! ServerStartTimer matches 1 run fill 1 215 47 1 215 47 redstone_block
-execute if score fake! ServerStartTimer matches 0 run fill 2 215 47 2 215 47 redstone_block
+execute if score fake! ServerStartTimer matches 5 run fill 197 359 97 197 359 97 redstone_block
+execute if score fake! ServerStartTimer matches 4 run fill 198 359 97 198 359 97 redstone_block
+execute if score fake! ServerStartTimer matches 3 run fill 199 359 97 199 359 97 redstone_block
+execute if score fake! ServerStartTimer matches 2 run fill 200 359 97 200 359 97 redstone_block
+execute if score fake! ServerStartTimer matches 1 run fill 201 359 97 201 359 97 redstone_block
+execute if score fake! ServerStartTimer matches 0 run fill 202 359 97 202 359 97 redstone_block
 
 execute if score fake! ServerStartTimer matches 0 run fill 183 47 2161 183 47 2161 redstone_block replace stone
 

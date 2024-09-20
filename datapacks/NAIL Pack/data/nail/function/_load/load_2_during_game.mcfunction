@@ -15,7 +15,7 @@ scoreboard objectives add TroughKill dummy
 scoreboard players set fake! TroughKill 1
 
 # load the sponges for win detection
-forceload add 0 226 -1 226
+forceload add 199 276 200 276
 
 # lane protection setup
 scoreboard objectives remove LaneProtection
@@ -39,7 +39,7 @@ scoreboard objectives add Kills playerKillCount
 scoreboard objectives setdisplay list Kills
 
 # force load game clock
-forceload add 12 236 -13 236
+forceload add 187 286 212 286
 
 # start game clock
 scoreboard objectives remove TimerBoard

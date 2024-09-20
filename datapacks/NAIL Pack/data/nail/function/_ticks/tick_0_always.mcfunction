@@ -41,8 +41,8 @@ execute as @p[scores={Teams=-10}] run function nail:game/player/opoptions_tp
 
 
 # spam saturation on people at map spawn
-effect give @a[x=-1,y=212,z=0,dx=1,dy=0,dz=0,gamemode=adventure] minecraft:saturation 1000000 255 true
-effect give @a[x=-1,y=212,z=0,dx=1,dy=0,dz=0,gamemode=adventure] minecraft:resistance 1000000 5 true
+effect give @a[x=199,y=356,z=50,dx=1,dy=0,dz=0,gamemode=adventure] minecraft:saturation 1000000 255 true
+effect give @a[x=199,y=356,z=50,dx=1,dy=0,dz=0,gamemode=adventure] minecraft:resistance 1000000 5 true
 
 
 # join/leave teams
@@ -53,10 +53,10 @@ team leave @a[team=!,scores={Teams=11..}]
 
 
 # someone enters team 1 trough arch
-scoreboard players set @a[x=2,y=212,z=14,dx=1,dy=0,dz=0,gamemode=!spectator] Teams 11
+scoreboard players set @a[x=202,y=356,z=64,dx=1,dy=1,dz=0,gamemode=!spectator] Teams 11
 execute as @p[scores={Teams=11}] run function nail:game/player/t1_trough_in_tp
 # someone enters team 2 trough arch
-scoreboard players set @a[x=-4,y=212,z=14,dx=1,dy=0,dz=0,gamemode=!spectator] Teams 12
+scoreboard players set @a[x=196,y=356,z=64,dx=1,dy=1,dz=0,gamemode=!spectator] Teams 12
 execute as @p[scores={Teams=12}] run function nail:game/player/t2_trough_in_tp
 
 # update difficulty with a delay to easily depawn all current mobs
@@ -64,23 +64,23 @@ execute if score fake! difficultytemp matches 1.. run function nail:game/gamepla
 
 
 # BACKDOOR - TOTALLY FORGET TO REMOVE THIS LATER
-gamemode spectator @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"]
-gamemode creative @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"]
-tp @a[x=-4,y=212,z=-13,dx=1,dy=1,dz=0,name="TrazLander"] 200 10 2200 90 0
+gamemode spectator @a[x=196,y=356,z=37,dx=1,dy=1,dz=0,name="TrazLander"]
+gamemode creative @a[x=196,y=356,z=37,dx=1,dy=1,dz=0,name="TrazLander"]
+tp @a[x=196,y=356,z=37,dx=1,dy=1,dz=0,name="TrazLander"] 200 10 2200 90 0
 
 
 # cannon range
 # cannon 1
-execute if entity @p[x=31,y=212,z=-12,dx=0,dy=0,dz=0] run function nail:game/cannon_range/cannon_1
-execute if score fake! Cannon1 matches 1.. run execute unless entity @p[x=31,y=212,z=-12,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon1
+execute if entity @p[x=231,y=356,z=38,dx=0,dy=0,dz=0] run function nail:game/cannon_range/cannon_1
+execute if score fake! Cannon1 matches 1.. run execute unless entity @p[x=231,y=356,z=38,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon1
 
 # cannon 2
-execute if entity @p[x=42,y=212,z=3,dx=0,dy=0,dz=2] run function nail:game/cannon_range/cannon_2
-execute if score fake! Cannon2 matches 1.. run execute unless entity @p[x=42,y=212,z=3,dx=0,dy=0,dz=0] run execute unless entity @p[x=42,y=212,z=5,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon2
+execute if entity @p[x=242,y=356,z=53,dx=0,dy=0,dz=2] run function nail:game/cannon_range/cannon_2
+execute if score fake! Cannon2 matches 1.. run execute unless entity @p[x=242,y=356,z=53,dx=0,dy=0,dz=0] run execute unless entity @p[x=242,y=356,z=55,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon2
 
 # cannon 3
-execute if entity @p[x=42,y=212,z=12,dx=0,dy=0,dz=2] run function nail:game/cannon_range/cannon_3
-execute if score fake! Cannon3 matches 1.. run execute unless entity @p[x=42,y=212,z=12,dx=0,dy=0,dz=0] run execute unless entity @p[x=42,y=212,z=14,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon3
+execute if entity @p[x=242,y=356,z=62,dx=0,dy=0,dz=2] run function nail:game/cannon_range/cannon_3
+execute if score fake! Cannon3 matches 1.. run execute unless entity @p[x=242,y=356,z=62,dx=0,dy=0,dz=0] run execute unless entity @p[x=242,y=356,z=64,dx=0,dy=0,dz=0] run scoreboard objectives remove Cannon3
 
 
 # Remove people stuck in the Team Captain System from logouts/disconnects

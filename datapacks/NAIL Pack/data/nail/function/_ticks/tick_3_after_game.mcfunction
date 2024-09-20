@@ -4,9 +4,9 @@ execute if score team! TNTboard matches 2 run function nail:game/gameplay/t2_tnt
 
 
 # random team button pressed
-execute if block -3 213 18 minecraft:stone_button[powered=true] run tellraw @a[x=0,y=213,z=18,distance=..5] [{"text":"You may not use the Team Selection until after the game has reset.","italic":true,"color":"red"}]
+execute if block 197 357 68 minecraft:stone_button[powered=true] run tellraw @a[x=200,y=357,z=68,distance=..5] [{"text":"You may not use the Team Selection until after the game has reset.","italic":true,"color":"red"}]
 # team captain system button pressed
-execute if block 3 214 18 minecraft:stone_button[powered=true] run tellraw @a[x=0,y=213,z=18,distance=..5] [{"text":"You may not use the Team Selection until after the game has reset.","italic":true,"color":"red"}]
+execute if block 203 358 68 minecraft:stone_button[powered=true] run tellraw @a[x=200,y=357,z=68,distance=..5] [{"text":"You may not use the Team Selection until after the game has reset.","italic":true,"color":"red"}]
 
 
 # reset - 30 seconds to reset

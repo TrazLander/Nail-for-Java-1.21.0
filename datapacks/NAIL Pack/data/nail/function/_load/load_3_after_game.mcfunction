@@ -13,7 +13,7 @@ scoreboard objectives remove TroughKill
 # scoreboard objectives remove T1RespawnRotate
 scoreboard objectives remove LaneProtection
 
-forceload remove 0 226 -1 226
+forceload remove 199 276 200 276
 
 # time set
 execute unless score fake! DefenderHandicap matches 1 run time set 12000
