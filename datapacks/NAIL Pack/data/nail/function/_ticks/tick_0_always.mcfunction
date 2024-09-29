@@ -85,3 +85,6 @@ execute if score fake! Cannon3 matches 1.. run execute unless entity @p[x=242,y=
 
 # Remove people stuck in the Team Captain System from logouts/disconnects
 execute unless entity @p[scores={TCrandom=-3..}] run scoreboard players set @a[x=236,y=2,z=2227,dx=59,dy=50,dz=29,gamemode=adventure] Teams 0
+
+# clear bounding boxes cause setting structure blocks to just air doesn't make them go away for some dumbass reason
+execute if score fake! ClearBounding matches 1.. run function nail:mapmaking/structure_savers_clear

@@ -37,3 +37,58 @@ effect give @a[scores={temp=0..1}] minecraft:resistance infinite 5 true
 effect give @a[scores={temp=0..1}] minecraft:weakness infinite 5 true
 
 scoreboard objectives remove temp
+
+
+gamerule doTileDrops false
+
+execute positioned 199 317 18 run place template nail:whole_map/sec1_layer1_right ~-47 ~3 ~
+execute positioned 199 317 18 run place template nail:whole_map/sec1_layer1_left ~1 ~3 ~
+execute positioned 199 317 18 run place template nail:whole_map/sec1_layer2_right ~-47 ~50 ~
+execute positioned 199 317 18 run place template nail:whole_map/sec1_layer2_left ~1 ~50 ~
+
+execute positioned 199 317 18 run place template nail:whole_map/sec2_layer1_right ~-47 ~3 ~48
+execute positioned 199 317 18 run place template nail:whole_map/sec2_layer1_left ~1 ~3 ~48
+execute positioned 199 317 18 run place template nail:whole_map/sec2_layer2_right ~-47 ~50 ~48
+execute positioned 199 317 18 run place template nail:whole_map/sec2_layer2_left ~1 ~50 ~48
+
+execute positioned 199 317 18 run place template nail:whole_map/sec3_layer1_right ~-23 ~3 ~96
+execute positioned 199 317 18 run place template nail:whole_map/sec3_layer1_left ~1 ~3 ~96
+execute positioned 199 317 18 run place template nail:whole_map/sec3_layer2_right ~-23 ~50 ~96
+execute positioned 199 317 18 run place template nail:whole_map/sec3_layer2_left ~1 ~50 ~96
+
+execute positioned 199 317 18 run place template nail:whole_map/sec4_layer1_right ~-23 ~3 ~144
+execute positioned 199 317 18 run place template nail:whole_map/sec4_layer1_left ~1 ~3 ~144
+execute positioned 199 317 18 run place template nail:whole_map/sec4_layer2_right ~-23 ~50 ~144
+execute positioned 199 317 18 run place template nail:whole_map/sec4_layer2_left ~1 ~50 ~144
+
+execute positioned 199 317 18 run place template nail:whole_map/sec5_layer1_right ~-23 ~3 ~192
+execute positioned 199 317 18 run place template nail:whole_map/sec5_layer1_left ~1 ~3 ~192
+execute positioned 199 317 18 run place template nail:whole_map/sec5_layer2_right ~-23 ~50 ~192
+execute positioned 199 317 18 run place template nail:whole_map/sec5_layer2_left ~1 ~50 ~192
+
+execute positioned 199 317 18 run place template nail:whole_map/sec6_layer1_right ~-23 ~3 ~240
+execute positioned 199 317 18 run place template nail:whole_map/sec6_layer1_left ~1 ~3 ~240
+execute positioned 199 317 18 run place template nail:whole_map/sec6_layer2_right ~-23 ~50 ~240
+execute positioned 199 317 18 run place template nail:whole_map/sec6_layer2_left ~1 ~50 ~240
+
+execute positioned 199 317 18 run place template nail:whole_map/sec7_layer1_right ~-23 ~3 ~288
+execute positioned 199 317 18 run place template nail:whole_map/sec7_layer1_left ~1 ~3 ~288
+execute positioned 199 317 18 run place template nail:whole_map/sec7_layer2_right ~-23 ~50 ~288
+execute positioned 199 317 18 run place template nail:whole_map/sec7_layer2_left ~1 ~50 ~288
+
+execute positioned 199 317 18 run place template nail:whole_map/sec8_layer1_right ~-23 ~3 ~336
+execute positioned 199 317 18 run place template nail:whole_map/sec8_layer1_left ~1 ~3 ~336
+execute positioned 199 317 18 run place template nail:whole_map/sec8_layer2_right ~-23 ~50 ~336
+execute positioned 199 317 18 run place template nail:whole_map/sec8_layer2_left ~1 ~50 ~336
+
+execute positioned 199 317 18 run place template nail:whole_map/sec9_layer1_right ~-23 ~3 ~384
+execute positioned 199 317 18 run place template nail:whole_map/sec9_layer1_left ~1 ~3 ~384
+execute positioned 199 317 18 run place template nail:whole_map/sec9_layer2_right ~-23 ~50 ~384
+execute positioned 199 317 18 run place template nail:whole_map/sec9_layer2_left ~1 ~50 ~384
+
+execute positioned 199 317 18 run place template nail:whole_map/sec10_layer1_right ~-23 ~3 ~432
+execute positioned 199 317 18 run place template nail:whole_map/sec10_layer1_left ~1 ~3 ~432
+execute positioned 199 317 18 run place template nail:whole_map/sec10_layer2_right ~-23 ~50 ~432
+execute positioned 199 317 18 run place template nail:whole_map/sec10_layer2_left ~1 ~50 ~432
+
+gamerule doTileDrops true
