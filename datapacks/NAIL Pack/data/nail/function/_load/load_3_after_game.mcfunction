@@ -13,8 +13,6 @@ scoreboard objectives remove TroughKill
 # scoreboard objectives remove T1RespawnRotate
 scoreboard objectives remove LaneProtection
 
-forceload remove 199 276 200 276
-
 # time set
 execute unless score fake! DefenderHandicap matches 1 run time set 12000
 execute if score fake! DefenderHandicap matches 1 run time set 10800
@@ -28,9 +26,20 @@ scoreboard players set fake! difficultytemp 1
 # redundant remove boards just in case
 scoreboard objectives remove ResetHidden
 scoreboard objectives remove Reset
-scoreboard objectives remove KillAll
 # add scoreboards
 scoreboard objectives add ResetHidden dummy
 scoreboard objectives add Reset dummy
 scoreboard objectives setdisplay sidebar Reset
-scoreboard players set fake! Reset 30
+scoreboard players set ~~Resetting~~ Reset 30
+
+
+gamemode spectator @a
+effect clear @a
+experience set @a 0 points
+experience set @a 0 levels
+effect give @a minecraft:saturation infinite 255 true
+effect give @a minecraft:instant_health 2 10 true
+effect give @a minecraft:resistance infinite 5 true
+effect give @a minecraft:weakness infinite 5 true
+
+tp @e[type=!player] ~ ~-300 ~

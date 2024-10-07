@@ -1,7 +1,3 @@
-# test if fresh world and do pre-setup
-execute unless score fake! gamestatus matches 1..3 run function nail:_load/load_1_pre_game
-
-
 # gamestatus specific functions
 execute if score fake! gamestatus matches 1 run function nail:_ticks/tick_1_pre_game
 execute if score fake! gamestatus matches 2 run function nail:_ticks/tick_2_during_game
@@ -18,7 +14,7 @@ execute as @p[scores={Teams=0}] run function nail:game/player/playerjoin
 
 # someone enters Play arch from lobby
 scoreboard players set @a[x=164,y=4,z=2167,dx=0,dy=0,dz=1,gamemode=!spectator] Teams 21
-execute as @p[scores={Teams=21}] run function nail:game/player/selectplay
+execute as @p[scores={Teams=21}] run function nail:game/player/select_play
 
 
 # someone enters spectate arch from lobby
@@ -88,3 +84,9 @@ execute unless entity @p[scores={TCrandom=-3..}] run scoreboard players set @a[x
 
 # clear bounding boxes cause setting structure blocks to just air doesn't make them go away for some dumbass reason
 execute if score fake! ClearBounding matches 1.. run function nail:mapmaking/structure_savers_clear
+
+# reset map when function map_reset/start is run
+execute if score fake! Regenerate matches 0.. run function nail:game/map_reset/regenerate
+
+# run vine fix to generate vines that aren't placed properly
+execute if score fake! Vine_Fix matches 0.. run function nail:game/map_reset/vine_fix

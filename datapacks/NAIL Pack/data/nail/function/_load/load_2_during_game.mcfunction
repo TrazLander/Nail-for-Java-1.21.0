@@ -41,6 +41,15 @@ scoreboard objectives setdisplay list Kills
 # force load game clock
 forceload add 187 286 212 286
 
+
+# clear leave team in tourney mode
+execute if score fake! MapMode matches 1 run place template nail:leave_team/defenders_no_arch 198 351 81
+# keep lamps powered
+setblock 196 356 97 minecraft:lever[powered=true,face=ceiling]
+# clear signs & levers
+fill 197 357 98 202 358 98 air
+fill 197 357 96 202 358 96 air
+
 # start game clock
 scoreboard objectives remove TimerBoard
 scoreboard objectives add TimerBoard dummy

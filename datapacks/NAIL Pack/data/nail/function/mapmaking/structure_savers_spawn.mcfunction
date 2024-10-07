@@ -37,3 +37,8 @@ execute positioned 199 317 18 run forceload remove ~ ~384
 execute positioned 199 317 18 run forceload add ~ ~432
 execute positioned 199 317 18 run place template nail:structure_savers/sec10 ~ ~ ~432
 execute positioned 199 317 18 run forceload remove ~ ~432
+
+# leave_team_defenders_arch
+execute positioned 199 317 18 run forceload add ~-1 ~63
+execute positioned 199 317 18 run place template nail:structure_savers/defenders_arch ~-1 ~32 ~63
+execute positioned 199 317 18 run forceload remove ~-1 ~63

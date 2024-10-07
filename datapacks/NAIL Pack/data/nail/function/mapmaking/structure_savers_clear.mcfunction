@@ -41,6 +41,11 @@ execute if score fake! ClearBounding matches 0 run execute positioned 199 317 18
 execute if score fake! ClearBounding matches 0 run execute positioned 199 317 18 run fill ~ ~ ~432 ~1 ~2 ~432 minecraft:barrier
 execute if score fake! ClearBounding matches 0 run execute positioned 199 317 18 run forceload remove ~ ~432
 
+# leave_team/defenders_arch
+execute if score fake! ClearBounding matches 0 run execute positioned 199 317 18 run forceload add ~-1 ~63
+execute if score fake! ClearBounding matches 0 run execute positioned 199 317 18 run fill ~-1 ~32 ~63 ~-1 ~33 ~63 minecraft:barrier
+execute if score fake! ClearBounding matches 0 run execute positioned 199 317 18 run forceload remove ~-1 ~63
+
 
 
 execute if score fake! ClearBounding matches 2.. run execute positioned 199 317 18 run forceload add ~ ~
@@ -82,6 +87,11 @@ execute if score fake! ClearBounding matches 2.. run execute positioned 199 317 
 execute if score fake! ClearBounding matches 2.. run execute positioned 199 317 18 run forceload add ~ ~432
 execute if score fake! ClearBounding matches 2.. run execute positioned 199 317 18 run fill ~ ~ ~432 ~1 ~2 ~432 minecraft:air
 execute if score fake! ClearBounding matches 2.. run execute positioned 199 317 18 run forceload remove ~ ~432
+
+# leave_team/defenders_arch
+execute if score fake! ClearBounding matches 2.. run execute positioned 199 317 18 run forceload add ~-1 ~63
+execute if score fake! ClearBounding matches 2.. run execute positioned 199 317 18 run fill ~-1 ~32 ~63 ~-1 ~33 ~63 minecraft:air
+execute if score fake! ClearBounding matches 2.. run execute positioned 199 317 18 run forceload remove ~-1 ~63
 
 execute if score fake! ClearBounding matches 2.. run scoreboard objectives remove ClearBounding
 
