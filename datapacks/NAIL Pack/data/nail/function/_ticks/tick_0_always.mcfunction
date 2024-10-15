@@ -86,7 +86,7 @@ execute unless entity @p[scores={TCrandom=-3..}] run scoreboard players set @a[x
 execute if score fake! ClearBounding matches 1.. run function nail:mapmaking/structure_savers_clear
 
 # reset map when function map_reset/start is run
-execute if score fake! Regenerate matches 0.. run function nail:game/map_reset/regenerate
+execute if score fake! Regenerate matches 0.. run function nail:game/map_reset/regenerate_timer
 
 # run vine fix to generate vines that aren't placed properly
 execute if score fake! Vine_Fix matches 0.. run function nail:game/map_reset/vine_fix

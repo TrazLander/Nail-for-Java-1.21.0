@@ -1,0 +1,1 @@
+execute if score fake! CurrentMap matches 1 run function nail:_ticks/tick_0_always

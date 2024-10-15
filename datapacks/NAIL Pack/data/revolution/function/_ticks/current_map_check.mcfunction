@@ -1,0 +1,1 @@
+execute if score fake! CurrentMap matches 2 run function revolution:_ticks/tick_0_always
